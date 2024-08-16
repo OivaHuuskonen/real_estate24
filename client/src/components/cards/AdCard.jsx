@@ -12,12 +12,12 @@ export default function AdCard({ ad, className  }) {
   
     <div className={cardClassName}> 
       <Link to={`/ad/${ad.slug}`}>
-        <Badge.Ribbon text={`${ad?.type} for ${ad?.action}`} color={badgeColor}>
+        <Badge.Ribbon text={`${ad?.type} for ${ad?.action}`} color={badgeColor} className="text-sm md:text-base">
           <div className="card hoverable shadow-lg shadow-[#879c7d] rounded-md my-card pb-4 w-90 h-100"> {/* Määritellään kortin koko */}
             <img
-              src={ad?.photos?.[0].Location}
+              src={ad?.photos?.[0]?.Location || 'default-image.jpg'}
               alt={`${ad?.type}-${ad?.address}-${ad?.action}-${ad?.price}`}
-              className="w-full h-80 object-cover" // Määritellään kuvan koko ja sovitus
+              className="w-full h-60 object-cover rounded-t-md" // Määritellään kuvan koko ja sovitus
               />
 
               <div className="card-body">
