@@ -1,0 +1,129 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cactus+Classical+Serif&family=Cinzel:wght@400..900&family=Gwendolyn:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');*/
+/*@font-face {
+  font-family: 'FloralCapsNouveau';
+  src: local('FloralCapsNouveau'), url(./fonts/FloralCapsNouveau.ttf) format('truetype');
+}*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /*background-image: url('./assets/lataus4.jpeg');*/
+  background-color: #F5F5F5;
+  /*font-family: 'floral', serif;*/
+  font-family: 'Cinzel', serif;
+}
+
+ /*font-family: 'FloralCapsNouveau';
+  src: local('FloralCapsNouveau'), url(./fonts/FloralCapsNouveau.ttf) format('truetype');*/
+
+/* Lisää nämä tyylit  @apply font-cinzel;*/
+.flex-grow {
+  flex: 1;
+}
+
+html, body {
+  height: 100%;
+}
+
+#app { /* Olettaen, että käytät luomiseen create-react-app:ia, jos ei, korvaa #root sovelluksesi root-elementin ID:llä */
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.ant-ribbon-wrapper {
+  width: 100% !important; /* Asettaa leveyden samaan kuin vanhemman elementin */
+  max-width: 400px !important; /* tai mikä tahansa maksimileveys joka sopii sinun layoutiisi */
+}
+
+.html-renderer-custom {
+  font-size: 2.5rem; /* sama kuin tailwindin text-xl */
+}
+
+/*.my-card {
+  font-family: "Cinzel", serif !important;
+}
+
+.active {
+  color: white;
+  background: #2196f3;
+}
+.pointer {
+  cursor: pointer;
+}
+.hoverable:hover {
+  transform: scale(1.01);
+  box-shadow: 0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.react-image-gallery--img {
+  object-fit: cover;
+  height: 500px !important;
+}
+
+.btn {
+  border: 2px solid #F6995C !important;
+  background-color: #51829B !important; 
+}*/
+
+/*div .sell {
+  background-color: #9BB0C1 !important; 
+}*/
+
+/*#B3C8CF
+#BED7DC
+#F1EEDC
+#E5DDC5*/
+
+
+/*#FDFFE2
+#83B4FF
+#5A72A0
+#1A2130*/
+
+/*#EADFB4
+#9BB0C1
+#51829B
+   <div className="flex">   
+      <div className="grid grid-cols-4 pt-10 pb-10">
+      <div className="col-span-1 bg-[#51829B]"></div>   
+      <div className="col-span-2">
+            <h1>
+              {ad?.type} in {ad?.address} for {ad?.action} {ad?.price}€
+            </h1>
+            <AdFeatures ad={ad} />
+            <hr />
+            <h3 className="fw-bold">{ad?.title}</h3>
+            <HTMLRenderer
+              html={ad?.description?.replaceAll(".", "<br/><br/>")}
+            />         
+      </div>
+      <div className="col-span-4 bg-[#51829B]"></div> 
+      </div>
+      </div>*/
+
+
+/*.image-gallery-slide-wrapper img {
+  object-fit: cover;
+  height: 500px !important;
+
+}
+
+.react-photo-gallery--gallery img {
+  object-fit: cover;
+  height: 500px !important;
+}
+
+.square {
+  border-radius: 0px !important;
+}*/
+
+
+
+/*.container_search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}*/
