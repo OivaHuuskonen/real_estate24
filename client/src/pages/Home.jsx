@@ -62,7 +62,7 @@ export default function Home() {
         <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>*/}
         <div name="header">
-        <PageHeader title="For Sell"/>
+        <PageHeader title="For Sellz"/>
         </div>
   
         <div className="grid grid-cols-1 
@@ -75,7 +75,7 @@ export default function Home() {
           ))}
         </div>
         
-        <PageHeader title="For Rent"/>
+        <PageHeader title="For Rentz"/>
       {/*
       head 1 justify-center mb-10 gap-y-10 place-items-center px-20 py-10 bg-[#FFFAFA]">
       <div className="grid grid-cols-1 
