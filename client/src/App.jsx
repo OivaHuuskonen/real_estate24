@@ -30,7 +30,7 @@ import Rent from "./pages/Rent";
 import Search from "./pages/Search";
 
 const PageNotFound = () => (
-  <div className="text-center p-5">404 PAGE NOT FOUND!</div>
+  <div className="text-center p-5">SORRY BUT ERROR 404 PAGE YOU LOOKING FOR NOT FOUND!</div>
 );
 
 function App() {
