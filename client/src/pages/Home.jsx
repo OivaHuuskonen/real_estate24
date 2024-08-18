@@ -48,8 +48,8 @@ export default function Home() {
   };
 
   return (
-    <div name='home' className='w-full pb-10'>
-      <div className="flex justify-center py-10">
+    <div name='home' className='max-w-screen w-full pb-10'>
+      <div className="flex justify-center py-10 mx-auto">
         <SearchForm />
         </div>
         {/*<div name="header">
