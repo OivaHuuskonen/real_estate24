@@ -38,7 +38,7 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <SearchProvider>
-          <div className="flex flex-col h-screen overflow-y-auto">
+          <div className="flex flex-col h-screen overflow-y-auto bg-[#FFFAFA]">
           <Main />
           <Toaster />
           <Routes>
