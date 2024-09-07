@@ -101,7 +101,7 @@ export default function SearchForm() {
   >
     {search.type === "Land" ? "☑️ Land" : "Land"}
   </button>
-  <div className="relative flex-grow min-h-[48px]">
+  <div className="relative flex-grow min-h-[48px] flex items-stretch">
     <button
       onClick={toggleDropdown}
       className="border-2 border-[#cbc385] py-2 px-2 w-full text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
