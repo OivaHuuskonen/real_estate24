@@ -17,7 +17,7 @@ import SearchForm from "../components/forms/SearchForm";
 );*/
 
 const PageHeader = ({ title }) => (
-  <div className="mx-auto w-full text-align:left pb-12 pt-14 xl:pb-16 xl:pt-20  bg-[#51829B]">
+  <div className="w-full text-align:left pb-12 pt-14 xl:pb-16 xl:pt-20 bg-[#51829B]">
     <div className="flex items-center pl-10">
       <h1 className="text-7xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
         {title}
@@ -52,16 +52,7 @@ export default function Home() {
       <div className="flex justify-center py-10 mx-auto">
         <SearchForm />
         </div>
-        {/*<div name="header">
-        <PageHeader title="Real estate marketplace"/>
-        </div>
-        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>*/}
-        <div name="header">
+        <div name="header" className="w-full">
         <PageHeader title="For Sellz"/>
         </div>
   
