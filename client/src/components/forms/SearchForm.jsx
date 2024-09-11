@@ -25,8 +25,13 @@ export default function SearchForm() {
     }
   }, []);*/
 
-  const toggleDropdown = () => {
+  /*const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
+  };*/
+
+  const toggleDropdown = () => {
+    setDropdownOpen((prev) => !prev); // Vaihtaa tilan edellisestä arvosta
+    console.log('Dropdown open:', !dropdownOpen); 
   };
 
   const handlePriceSelect = (name, array) => {
@@ -63,7 +68,7 @@ export default function SearchForm() {
 
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="w-full max-w-xl px-4">
+      <div className="w-full max-w-xl px-2">
         <GooglePlacesAutocomplete
           apiKey={import.meta.env.VITE_GOOGLE_PLACES_KEY}
           selectProps={{
@@ -76,7 +81,7 @@ export default function SearchForm() {
         />
       </div>
 
-      <div className="flex justify-between w-full px-0 mx-auto pt-4 items-stretch max-w-full overflow-x-hidden">
+      <div className="flex justify-between w-full px-4 mx-auto pt-4 items-stretch max-w-full overflow-x-hidden">
   <button
     onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
     className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
@@ -101,14 +106,14 @@ export default function SearchForm() {
   >
     {search.type === "Land" ? "☑️ Land" : "Land"}
   </button>
-  <div className="relative flex-grow min-h-[48px] flex items-stretch max-w-full">
+  {/*<div className="relative flex-grow min-h-[48px] flex items-stretch max-w-full">
     <button
       onClick={toggleDropdown}
       className="border-2 border-[#cbc385] py-2 px-2 w-full text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
     >
       {search?.price ? search.price : "Price"}
     </button>
-    <ul className={`absolute bg-white shadow-md mt-2 w-full ${dropdownOpen ? "block" : "hidden"}`}>
+    <ul className={`absolute bg-white shadow-md mt-2 w-full ${dropdownOpen ? "block" : "hidden"} z-50`}>
       {search.action === "Buy"
         ? sellPrices.map((item) => (
             <li key={item._id} className="p-2 hover:bg-gray-100 text-sm">
@@ -131,7 +136,42 @@ export default function SearchForm() {
             </li>
           ))}
     </ul>
-  </div>
+  </div>*/}
+
+<div className="relative">
+  <button
+    onClick={toggleDropdown}
+    className="border-2 border-[#cbc385] py-2 px-2 w-full text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
+  >
+    {search?.price ? search.price : "Price"}
+  </button>
+  {dropdownOpen && (
+    <ul className="absolute bg-white shadow-md mt-2 w-full z-50">
+      {search.action === "Buy"
+        ? sellPrices.map((item) => (
+            <li key={item._id} className="p-2 hover:bg-gray-100 text-sm">
+              <a
+                onClick={() => handlePriceSelect(item.name, item.array)}
+                className="block w-full text-left"
+              >
+                {item.name}
+              </a>
+            </li>
+          ))
+        : rentPrices.map((item) => (
+            <li key={item._id} className="p-2 hover:bg-gray-100 text-sm">
+              <a
+                onClick={() => handlePriceSelect(item.name, item.array)}
+                className="block w-full text-left"
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
+    </ul>
+  )}
+</div>
+
   <button
     onClick={handleSearch}
     className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
