@@ -81,7 +81,8 @@ export default function SearchForm() {
         />
       </div>
 
-      <div className="flex justify-between w-full px-4 mx-auto pt-4 items-stretch max-w-full overflow-x-hidden">
+  {/*<div className="flex justify-between w-full px-4 mx-auto pt-4 items-stretch max-w-full overflow-x-hidden">*/}
+  <div className="flex flex-wrap justify-between w-full px-4 mx-auto pt-4 items-stretch max-w-full overflow-x-hidden">
   <button
     onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
     className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
@@ -106,14 +107,22 @@ export default function SearchForm() {
   >
     {search.type === "Land" ? "☑️ Land" : "Land"}
   </button>
-  <div className="relative flex-grow min-h-[48px] flex items-stretch max-w-full">
+  {/*<div className="relative flex-grow min-h-[48px] flex items-stretch max-w-full">
     <button
       onClick={toggleDropdown}
       className="border-2 border-[#cbc385] py-2 px-2 w-full text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
     >
       {search?.price ? search.price : "Price"}
     </button>
-    <ul className={`absolute bg-white shadow-md mt-2 w-full ${dropdownOpen ? "block" : "hidden"} z-50`}>
+    <ul className={`absolute bg-white shadow-md mt-2 w-full ${dropdownOpen ? "block" : "hidden"} z-50`}>*/}
+  <div className="relative flex-grow min-h-[48px] flex items-stretch max-w-full">
+  <button
+    onClick={toggleDropdown}
+    className="border-2 border-[#cbc385] py-2 px-2 w-full text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
+  >
+    {search?.price ? search.price : "Price"}
+  </button>
+  <ul className={`absolute bg-white shadow-md mt-2 w-full ${dropdownOpen ? "block" : "hidden"} z-50`}>
       {search.action === "Buy"
         ? sellPrices.map((item) => (
             <li key={item._id} className="p-2 hover:bg-gray-100 text-sm">
@@ -139,14 +148,6 @@ export default function SearchForm() {
   </div>
 
  {/*
- 
- 
- minulla on react / vite / tailwindcss "kiinteistövälitys mern stack"  jossa on ideana että välittäjät voivat lisätä sinne vuokra tai myynti kohteita, lisätä kuvia jne,. ja että asiaks voi etsiä kohteita google maps / places API haun avulla. Koe julkaisen sovellusta nyt render kautta ja layout toimii, näyttää suunnilleen hyvältä suurella näytöllä mutta älypuhelin näytöllä renderöinnissä on joitain ongelmia: <SearchForm /> komponentissa oleva paikka haku filtteröintiä varten oleva nappi rivistö vuotaa yli näytön oikelta laidalta, se ei keskity ja "price" nappi on eri korkuinen kuin kaikki muuta napit, se ei myöskään toimi vaikka se antaa selaimen konsoliin  
- 
- 
- 
- 
- 
  <div className="relative">
   <button
     onClick={toggleDropdown}

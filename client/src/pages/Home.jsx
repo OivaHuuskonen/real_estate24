@@ -14,7 +14,14 @@ import SearchForm from "../components/forms/SearchForm";
    
    /* <img src={artNouveau} alt="Art Nouveau" className="h-[1em] w-auto ml-4" /> </h1>
   </div>
-);*/
+);
+
+
+minulla on react / vite / tailwindcss "kiinteistövälitys mern stack" jota koe julkaisen render kautta. Sovelluksessa on ideana se että asiakas voi etsiä google maps / places haun avulla kohteita ympäristöstään. Sovellus toimii suunnilleen, näyttää hyvälle suurilta näytöiltä mutta älypuhelin näytöllä <SerachForm /> nappirivistö vuotaa yli näytön oikeasta reunasta, myöskään "price" napin alasveto valikko ei toimi. Osaatko kertoa miten nämä asiat olisi mahdollista korjata? Koodi on nyt:
+
+
+
+*/
 
 const PageHeader = ({ title }) => (
   <div className="w-full text-align:left pb-12 pt-14 xl:pb-16 xl:pt-20 bg-[#51829B]">
