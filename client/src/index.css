@@ -43,6 +43,13 @@ html, body {
   font-size: 2.5rem; /* sama kuin tailwindin text-xl */
 }
 
+@media (max-width: 768px) {
+  .search-form .pac-container {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
 /*.my-card {
   font-family: "Cinzel", serif !important;
 }

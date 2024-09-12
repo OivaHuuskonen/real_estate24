@@ -67,21 +67,26 @@ export default function SearchForm() {
   };
 
   return (
-    <div className="flex flex-col items-center w-full">
-      <div className="w-full max-w-xl px-2">
-        <GooglePlacesAutocomplete
-          apiKey={import.meta.env.VITE_GOOGLE_PLACES_KEY}
-          selectProps={{
-            defaultInputValue: search?.address,
-            placeholder: "Search for address..",
-            onChange: ({ value }) => {
-              setSearch({ ...search, address: value.description });
-            },
-          }}
-        />
-      </div>
 
-  {/*<div className="flex justify-between w-full px-4 mx-auto pt-4 items-stretch max-w-full overflow-x-hidden">*/}
+
+      <div className="search-form">
+      <GooglePlacesAutocomplete
+        apiKey="YOUR_API_KEY"
+        onSelect={(address) => console.log(address)}
+        placeholder="Hae osoite"
+        styles={{
+          input: (provided) => ({
+            ...provided,
+            width: "100%",
+            maxWidth: "300px", // Pienennä napin leveyttä
+          }),
+          container: (provided) => ({
+            ...provided,
+            width: "100%",
+            maxWidth: "300px", // Pienennä napin leveyttä
+          }),
+        }}
+      />
   <div className="flex flex-wrap justify-between w-full px-4 mx-auto pt-4 items-stretch max-w-full overflow-x-hidden">
   <button
     onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
@@ -107,14 +112,7 @@ export default function SearchForm() {
   >
     {search.type === "Land" ? "☑️ Land" : "Land"}
   </button>
-  {/*<div className="relative flex-grow min-h-[48px] flex items-stretch max-w-full">
-    <button
-      onClick={toggleDropdown}
-      className="border-2 border-[#cbc385] py-2 px-2 w-full text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
-    >
-      {search?.price ? search.price : "Price"}
-    </button>
-    <ul className={`absolute bg-white shadow-md mt-2 w-full ${dropdownOpen ? "block" : "hidden"} z-50`}>*/}
+ 
   <div className="relative flex-grow min-h-[48px] flex items-stretch max-w-full">
   <button
     onClick={toggleDropdown}
@@ -146,6 +144,38 @@ export default function SearchForm() {
           ))}
     </ul>
   </div>
+  <button
+    onClick={handleSearch}
+    className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
+  >
+    Search
+  </button>
+  </div>
+  </div>
+  );
+}
+
+    {/*<div className="flex flex-col items-center w-full">
+      <div className="w-full max-w-xl px-2">
+        <GooglePlacesAutocomplete
+          apiKey={import.meta.env.VITE_GOOGLE_PLACES_KEY}
+          selectProps={{
+            defaultInputValue: search?.address,
+            placeholder: "Search for address..",
+            onChange: ({ value }) => {
+              setSearch({ ...search, address: value.description });
+            },
+          }}
+        />
+      </div>*/}
+ {/*<div className="relative flex-grow min-h-[48px] flex items-stretch max-w-full">
+    <button
+      onClick={toggleDropdown}
+      className="border-2 border-[#cbc385] py-2 px-2 w-full text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
+    >
+      {search?.price ? search.price : "Price"}
+    </button>
+    <ul className={`absolute bg-white shadow-md mt-2 w-full ${dropdownOpen ? "block" : "hidden"} z-50`}>*/}
 
  {/*
  <div className="relative">
@@ -181,16 +211,8 @@ export default function SearchForm() {
     </ul>
   )}
 </div>*/}
-
-  <button
-    onClick={handleSearch}
-    className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
-  >
-    Search
-  </button>
-</div>
-     
-  {/*<div className="flex justify-between w-full px-2 mx-auto pt-4 items-stretch">
+{/*  
+<div className="flex justify-between w-full px-2 mx-auto pt-4 items-stretch">
   <button
     onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
     className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
@@ -316,13 +338,3 @@ export default function SearchForm() {
           Search
         </button>
       </div>*/}
-    </div>
-  );
-}
-
-
-
-
-
-
-
