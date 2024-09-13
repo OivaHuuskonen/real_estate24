@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cactus+Classical+Serif&family=Cinzel:wght@400..900&family=Gwendolyn:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-/*@font-face {
+/*@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cactus+Classical+Serif&family=Cinzel:wght@400..900&family=Gwendolyn:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');*/
+@font-face {
   font-family: 'FloralCapsNouveau';
   src: local('FloralCapsNouveau'), url(./fonts/Floralcapsnouveau-MZGn.ttf) format('truetype');
-}*/
+}
 
 @tailwind base;
 @tailwind components;
@@ -12,8 +12,8 @@ body {
 
   /*background-image: url('./assets/lataus4.jpeg');*/
   background-color: #F5F5F5;
-  //font-family: 'floral', serif;
-  font-family: 'Cinzel', serif;
+  font-family: 'floral', serif;
+  /*font-family: 'Cinzel', serif;*/
 }
 
  /*font-family: 'FloralCapsNouveau';
@@ -28,7 +28,7 @@ html, body {
   height: 100%;
 }
 
-#app { /* Olettaen, että käytät luomiseen create-react-app:ia, jos ei, korvaa #root sovelluksesi root-elementin ID:llä */
+#root { /* Olettaen, että käytät luomiseen create-react-app:ia, jos ei, korvaa #root sovelluksesi root-elementin ID:llä */
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -44,9 +44,10 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .search-form .pac-container {
+  .search-form button {
     width: 100%;
-    max-width: 300px;
+    max-width: 150px;
+    margin: 0 auto;
   }
 }
 

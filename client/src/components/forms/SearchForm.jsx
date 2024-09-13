@@ -31,7 +31,7 @@ export default function SearchForm() {
 
   const toggleDropdown = () => {
     setDropdownOpen((prev) => !prev); // Vaihtaa tilan edellisestä arvosta
-    console.log('Dropdown open:', !dropdownOpen); 
+    //console.log('Dropdown open:', !dropdownOpen); 
   };
 
   const handlePriceSelect = (name, array) => {
@@ -44,50 +44,25 @@ export default function SearchForm() {
   };
 
   const handleSearch = async () => {
-    setSearch({ ...search, loading: false });
     try {
       const { results, page, price, ...rest } = search;
       const query = queryString.stringify(rest);
       const { data } = await axios.get(`/search?${query}`);
-      if (search?.page !== "/search") {
-        setSearch((prev) => ({ ...prev, results: data, loading: false }));
-        navigate("/search");
-      } else {
-        setSearch((prev) => ({
-          ...prev,
-          results: data,
-          page: window.location.pathname,
-          loading: false,
-        }));
-      }
+      setSearch({ ...search, results: data, loading: false });
+      if (search?.page !== "/search") navigate("/search");
     } catch (err) {
       console.log(err);
-      setSearch({ ...search, loading: false });
     }
   };
 
   return (
-
-
       <div className="search-form">
       <GooglePlacesAutocomplete
         apiKey="YOUR_API_KEY"
         onSelect={(address) => console.log(address)}
-        placeholder="Hae osoite"
-        styles={{
-          input: (provided) => ({
-            ...provided,
-            width: "100%",
-            maxWidth: "300px", // Pienennä napin leveyttä
-          }),
-          container: (provided) => ({
-            ...provided,
-            width: "100%",
-            maxWidth: "300px", // Pienennä napin leveyttä
-          }),
-        }}
+        placeholder="search address"
       />
-  <div className="flex flex-wrap justify-between w-full px-4 mx-auto pt-4 items-stretch max-w-full overflow-x-hidden">
+  <div className="flex flex-nowrap justify-between w-full px-2 mx-auto pt-4 items-stretch max-w-full">
   <button
     onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
     className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
@@ -113,7 +88,6 @@ export default function SearchForm() {
     {search.type === "Land" ? "☑️ Land" : "Land"}
   </button>
  
-  <div className="relative flex-grow min-h-[48px] flex items-stretch max-w-full">
   <button
     onClick={toggleDropdown}
     className="border-2 border-[#cbc385] py-2 px-2 w-full text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
@@ -125,25 +99,17 @@ export default function SearchForm() {
         ? sellPrices.map((item) => (
             <li key={item._id} className="p-2 hover:bg-gray-100 text-sm">
               <a
-                onClick={() => handlePriceSelect(item.name, item.array)}
-                className="block w-full text-left"
-              >
-                {item.name}
-              </a>
+                onClick={() => handlePriceSelect(item.name, item.array)}>{item.name}</a>
             </li>
           ))
         : rentPrices.map((item) => (
             <li key={item._id} className="p-2 hover:bg-gray-100 text-sm">
               <a
-                onClick={() => handlePriceSelect(item.name, item.array)}
-                className="block w-full text-left"
-              >
-                {item.name}
-              </a>
+                onClick={() => handlePriceSelect(item.name, item.array)}>{item.name}</a>
             </li>
           ))}
     </ul>
-  </div>
+  
   <button
     onClick={handleSearch}
     className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[48px]"
