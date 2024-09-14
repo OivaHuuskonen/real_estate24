@@ -57,11 +57,13 @@ export default function SearchForm() {
 
   return (
       <div className="search-form">
+      <div className="w-full max-w-xl px-4">
       <GooglePlacesAutocomplete
         apiKey="YOUR_API_KEY"
         onSelect={(address) => console.log(address)}
         placeholder="search address"
       />
+   </div>
   <div className="flex flex-nowrap justify-between w-full px-2 mx-auto pt-4 items-stretch max-w-full">
   <button
     onClick={() => setSearch({ ...search, action: "Buy", price: "" })}

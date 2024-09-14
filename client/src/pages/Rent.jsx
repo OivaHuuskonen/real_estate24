@@ -39,14 +39,15 @@ export default function Rent() {
       <div name="rent">
       <PageHeader title="For Rent"/>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 justify-center mb-10 gap-y-10 place-items-center px-20 py-10 bg-[#F5F5F5]">
+      <div className="grid grid-cols-1 
+        sm:grid-cols-1 
+        md:grid-cols-2 
+        xl:grid-cols-3   
+        justify-center mb-10 gap-y-10 place-items-center px-4 sm:px-8 py-10 bg-[#FFFAFA]">
         {ads?.map((ad, index) => (
           <AdCard 
             ad={ad} 
             key={ad._id} 
-            className={index % 3 === 0 ? 'justify-self-end' :
-                       index % 3 === 1 ? '' :
-                       'justify-self-start'}
             />
         ))}
       </div>
