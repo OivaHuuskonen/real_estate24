@@ -10,13 +10,14 @@
 .wrapper {
     width:420px;
     background: transparent;
-    box-shadow: 0 0 10px #9BB0C1;
+    backdrop-filter: blur(30px);
+    padding: 10px 40px;
+    height: 60vh;
+   /* box-shadow: 0 0 10px #9BB0C1;
     border: 2px solid #9BB0C1;
     color: #51829B;
-    backdrop-filter: blur(30px);
-    border-radius: 10px;
-    padding: 30px 40px;
-    height: 60vh;
+    border-radius: 10px;*/
+  
 }
 
 .wrapper h1 {

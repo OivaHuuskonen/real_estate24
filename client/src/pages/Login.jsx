@@ -50,7 +50,6 @@ const location = useLocation();
     <div className='center-content'>
     <div className="wrapper">
       <form onSubmit={handleSubmit}>
-        <br></br><br></br><br></br>
       <h1>
         Login
       </h1>

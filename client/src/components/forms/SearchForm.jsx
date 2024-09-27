@@ -11,7 +11,7 @@ export default function SearchForm() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
-  //console.log(import.meta.env.VITE_GOOGLE_PLACES_KEY);
+  console.log(import.meta.env.VITE_GOOGLE_PLACES_KEY);
 
   /*useEffect(() => {
     if (!window.google) {
@@ -57,7 +57,7 @@ export default function SearchForm() {
 
   return (
       <div className="search-form">
-      <div className="w-full max-w-xl px-4">
+      <div className="w-full max-w-xl px-6">
       <GooglePlacesAutocomplete
         apiKey="YOUR_API_KEY"
         onSelect={(address) => console.log(address)}

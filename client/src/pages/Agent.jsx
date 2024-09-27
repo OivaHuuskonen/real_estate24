@@ -67,12 +67,13 @@ export default function Agent() {
       </div>
 
       <div className="flex justify-center py-10 mx-auto">
-        <div className="grid grid-cols-1">
+        <div className="grid grid-cols-1
+        justify-center mb-10 gap-y-10 place-items-center px-4 sm:px-8 py-10 bg-[#FFFAFA]">
           <UserCard user={agent} />
         </div>
       </div>
 
-      <h2 className="text-center m-5">Recent Listings</h2>
+      <h2 className="text-center m-5"> recent Listings</h2>
 
       {/*<div className="container">
         <div className="row">
