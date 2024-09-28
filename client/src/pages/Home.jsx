@@ -60,7 +60,7 @@ export default function Home() {
         <SearchForm />
         </div>
         <div name="header" className="w-full">
-        <PageHeader title="For sell"/>
+        <PageHeader title="For Sell"/>
         </div>
   
         <div className="grid grid-cols-1 
@@ -74,7 +74,7 @@ export default function Home() {
         </div>
 
         <div name="header" className="w-full">
-        <PageHeader title="For rent"/>
+        <PageHeader title="For Rent"/>
         </div>
       {/*
       head 1 justify-center mb-10 gap-y-10 place-items-center px-20 py-10 bg-[#FFFAFA]">
