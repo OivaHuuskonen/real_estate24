@@ -43,10 +43,17 @@ export default function SearchForm() {
     setDropdownOpen(false); // Sulkee pudotusvalikon valinnan jälkeen
   };
 
+  console.log("Search button clicked")
+
   const handleSearch = async () => {
     try {
-      const { results, page, price, ...rest } = search;
-      const query = queryString.stringify(rest);
+      const { results, page, ...rest } = search;
+      //const query = queryString.stringify(rest);
+      const query = queryString.stringify({
+        ...rest,
+        priceRange: search.priceRange.join(","),
+        address: search.address,
+      });      
       const { data } = await axios.get(`/search?${query}`);
       setSearch({ ...search, results: data, loading: false });
       if (search?.page !== "/search") navigate("/search");
@@ -59,7 +66,7 @@ export default function SearchForm() {
       <div className="search-form">
       <div className="w-full max-w-xl px-6">
       <GooglePlacesAutocomplete
-        apiKey="YOUR_API_KEY"
+        apiKey={import.meta.env.VITE_GOOGLE_PLACES_KEY}
         onSelect={(address) => console.log(address)}
         placeholder="search address"
       />
@@ -100,8 +107,8 @@ export default function SearchForm() {
       {search.action === "Buy"
         ? sellPrices.map((item) => (
             <li key={item._id} className="p-2 hover:bg-gray-100 text-sm">
-              <a
-                onClick={() => handlePriceSelect(item.name, item.array)}>{item.name}</a>
+              <button
+                onClick={() => handlePriceSelect(item.name, item.array)}>{item.name}</button>
             </li>
           ))
         : rentPrices.map((item) => (

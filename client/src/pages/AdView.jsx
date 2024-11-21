@@ -25,8 +25,8 @@ export default function AdView() {
       try {
         const { data } = await axios.get(`/ad/${params?.slug}`);
         console.log('ad-objekti:', data.ad); // Tarkastellaan ad-objektin sisältöä
-        setAd(data?.ad);
-        setRelated(data?.related);
+        setAd(data?.ad || {});
+        setRelated(data?.related || []);
       } catch (err) {
         console.log(err);
       }
@@ -60,6 +60,10 @@ export default function AdView() {
     }
   };
 
+  if (!ad || Object.keys(ad).length === 0) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <div className="flex">
@@ -90,7 +94,7 @@ export default function AdView() {
       <div className="container mb-5">
         <div className="row">
           <div className="col-lg-8 offset-lg-2 mt-3">
-            <MapCard ad={ad} />
+          {ad?.location && <MapCard ad={ad} />}  {/* Lisätty tarkistus <MapCard ad={ad} />*/}
             <br />
             <br />
             <p className="text-xl pl-6">
