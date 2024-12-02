@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import { DATABASE } from "./config.js";
 import authRoutes from "./routes/auth.js";
 import adRoutes from "./routes/ad.js";
+import axios from "axios"; // Axios tarvitaan Geocoding API -kutsuja varten
 
 const app = express();
 app.use(cors());
@@ -32,6 +33,39 @@ app.use(cors({
 // routes middleware
 app.use("/api", authRoutes);
 app.use("/api", adRoutes);
+
+// Geocoding API -reitti
+/*const router = express.Router();
+
+router.get('/geocode', async (req, res) => {
+  console.log("Request received for /geocode");
+  console.log("Query parameters:", req.query);
+  const { address } = req.query;
+
+  if (!address) {
+    return res.status(400).json({ error: "Address is required" });
+  }
+
+  try {
+    const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+      params: {
+        address,
+        key: process.env.GOOGLE_API_KEY,
+      },
+    });
+
+    if (response.data.status !== "OK") {
+      return res.status(400).json({ error: response.data.error_message || "Geocoding failed" });
+    }
+
+    res.json(response.data);
+  } catch (err) {
+    console.error("Geocoding API error:", err.message);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+app.use('/api', router);*/
 
 // Testi reitti palvelimessa
 app.get("/test", (req, res) => {

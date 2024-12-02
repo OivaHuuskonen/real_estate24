@@ -3,8 +3,10 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import PropTypes from 'prop-types';
 
 function MapCard({ ad }) {
+
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_KEY,
+    async: true,
   });
 
   console.log("Is Google Map loaded?", isLoaded);
@@ -52,7 +54,6 @@ function MapCard({ ad }) {
     <div>Loading...</div>
   );
 }
-
 // Lisää prop-tyyppien validointi
 MapCard.propTypes = {
   ad: PropTypes.shape({

@@ -13,7 +13,7 @@
     "@eslint/config-array": "^0.18.0",
     "@eslint/object-schema": "^2.1.4",
     "@popperjs/core": "^2.11.8",
-    "@react-google-maps/api": "^2.19.3",
+    "@react-google-maps/api": "^2.20.3",
     "antd": "^5.17.3",
     "axios": "^1.7.4",
     "bootstrap": "^5.3.3",
