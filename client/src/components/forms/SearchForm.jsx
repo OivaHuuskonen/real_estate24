@@ -62,35 +62,35 @@ export default function SearchForm() {
           }}
         />
       </div>
-      <div className="flex flex-wrap justify-between w-full px-2 pt-4">
+      <div className="flex flex-wrap justify-between w-full px-2 pt-4 space-x-2">
         <button
           onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
-          className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] h-auto min-h-[40px] text-center"
+          className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[40px]"
         >
           {search.action === "Buy" ? "☑️" : ""} Buy
         </button>
         <button
           onClick={() => setSearch({ ...search, action: "Rent", price: "" })}
-          className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] h-auto min-h-[40px] text-center"
+          className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[40px]"
         >
           {search.action === "Rent" ? "☑️ Rent" : "Rent"}
         </button>
         <button
           onClick={() => setSearch({ ...search, type: "House", price: "" })}
-          className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] h-auto min-h-[40px] text-center"
+          className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[40px]"
         >
           {search.type === "House" ? "☑️ House" : "House"}
         </button>
         <button
           onClick={() => setSearch({ ...search, type: "Land", price: "" })}
-          className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] h-auto min-h-[40px] text-center"
+          className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[40px]"
         >
           {search.type === "Land" ? "☑️Land" : "Land"}
         </button>
         <div className="relative flex-grow">
           <button
             onClick={toggleDropdown}
-            className="border-2 border-[#cbc385] py-2 px-2 w-full text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] h-auto min-h-[40px] text-center"
+            className="border-2 border-[#cbc385] py-2 px-2 w-full text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[40px]"
           >
             {search?.price ? search.price : "Price"}
           </button>
@@ -120,7 +120,7 @@ export default function SearchForm() {
         </div>
         <button
           onClick={handleSearch}
-          className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] h-auto min-h-[40px] text-center"
+          className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] min-h-[40px]"
         >
           Search
         </button>
@@ -128,6 +128,7 @@ export default function SearchForm() {
     </div>
   );
 }
+
 
 
 
