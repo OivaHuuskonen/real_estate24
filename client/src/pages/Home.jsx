@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../context/auth";
 import axios from "axios";
 import AdCard from "../components/cards/AdCard";
-import SearchForm from "../components/forms/SearchForm";
-import SearchFormzz from "../components/forms/SearchFormzz";
+//import SearchForm from "../components/forms/SearchForm";
+import SearchFormRB from "../components/forms/SearchFormRB";
 //import leafyIcon from '../assets/leafy.png'; 
 //import artNouveau from '../assets/art-nouveau.png'
 
@@ -57,11 +57,9 @@ export default function Home() {
 
   return (
     <div name='home' className='max-w-screen w-full pb-10'>
-      <div className="flex justify-center py-10 mx-auto">
-        <SearchForm />
-        </div>
+     
         <div className="flex justify-center py-10 mx-auto">
-        <SearchFormzz />
+        <SearchFormRB />
         </div>
         <div name="header" className="w-full">
         <PageHeader title="For Sell"/>

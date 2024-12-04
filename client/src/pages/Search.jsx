@@ -1,5 +1,5 @@
 import SearchForm from "../components/forms/SearchForm";
-import SearchFormzz from "../components/forms/SearchFormzz";
+import SearchFormRB from "../components/forms/SearchFormRB";
 import { useSearch } from "../context/search";
 import AdCard from "../components/cards/AdCard";
 
@@ -12,7 +12,7 @@ export default function Search() {
       <SearchForm />
       </div>
       <div>
-      <SearchFormzz />
+      <SearchFormRB />
 
       </div>
       <div name="seacrh">
