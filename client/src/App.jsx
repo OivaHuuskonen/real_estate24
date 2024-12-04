@@ -28,7 +28,7 @@ import Agent from "./pages/Agent";
 import Buy from "./pages/Buy";
 import Rent from "./pages/Rent";
 import Search from "./pages/Search";
-
+import SearchFormzz from './components/forms/SearchFormzz';
 const PageNotFound = () => (
   <div className="text-center p-5">SORRY BUT ERROR 404 PAGE YOU LOOKING FOR NOT FOUND!</div>
 );
