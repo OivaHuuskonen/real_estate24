@@ -19,9 +19,6 @@ import SearchFormRB from "../components/forms/SearchFormRB";
 
 
 minulla on react / vite / tailwindcss "kiinteistövälitys mern stack" jota koe julkaisen render kautta. Sovelluksessa on ideana se että asiakas voi etsiä google maps / places haun avulla kohteita ympäristöstään. Sovellus toimii suunnilleen, näyttää hyvälle suurilta näytöiltä mutta älypuhelin näytöllä <SerachForm /> nappirivistö vuotaa yli näytön oikeasta reunasta, myöskään "price" napin alasveto valikko ei toimi. Osaatko kertoa miten nämä asiat olisi mahdollista korjata? Koodi on nyt:
-
-
-
 */
 
 const PageHeader = ({ title }) => (

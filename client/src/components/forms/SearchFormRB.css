@@ -49,7 +49,39 @@
   }
 
   
+/*.dropdown-menu.show {
+  z-index: 1050; /* Z-indeksi, jotta menu näkyy muiden elementtien päällä */
+  /*position: absolute; /* Varmistetaan, että menu sijoittuu oikein */
+/*}
+
+.google-places-autocomplete__dropdown-container { 
+    z-index: 1050; *//* Z-indeksi Google Places Autocomplete -pudotusvalikolle */ 
+   /* position: absolute;*/ /* Varmistetaan, että pudotusvalikko sijoittuu oikein */
+/*}*/
+
+.button-group {
+  flex-wrap: wrap !important;
+}
+
+.button-group > .btn {
+  flex: 1 1 auto;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .button-group > .btn {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+  }
+}
+
 .dropdown-menu.show {
   z-index: 1050; /* Z-indeksi, jotta menu näkyy muiden elementtien päällä */
   position: absolute; /* Varmistetaan, että menu sijoittuu oikein */
+}
+
+.google-places-autocomplete__dropdown-container {
+  z-index: 1050; /* Z-indeksi Google Places Autocomplete -pudotusvalikolle */
+  position: absolute; /* Varmistetaan, että pudotusvalikko sijoittuu oikein */
 }
