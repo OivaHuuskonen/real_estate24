@@ -27,7 +27,7 @@
   }
   
   button {
-    padding: 20px 25px !important; /* Lisää paddingia */
+    padding: 10px 15px !important; /* Lisää paddingia */
     font-size: 1rem; /* Tekstin koko */
     border-width: 2px !important; /* Paksumpi reuna */
     border-radius: 0px !important; /* Lisää pyöristetyt reunat */
