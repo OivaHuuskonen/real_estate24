@@ -61,6 +61,7 @@
 
 .button-group {
   flex-wrap: wrap !important;
+  overflow: auto;
 }
 
 .button-group > .btn {
@@ -70,8 +71,9 @@
 
 @media (max-width: 768px) {
   .button-group > .btn {
-    width: 100%;
-    max-width: none;
+    /*width: 100%;*/
+    flex: 1;
+    max-width: 100%;
     margin: 0 auto;
   }
 }
