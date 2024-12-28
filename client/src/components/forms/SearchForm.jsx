@@ -91,7 +91,9 @@ export default function SearchForm() {
                             <div className="relative flex-grow">
                             <button
                               onClick={toggleDropdown} //{/*onClick={() => setSearch({ ...search, price: search.price ? "" : "Price" })}*/}
-                              className="border-2 border-[#cbc385] py-2 px-2 w-full text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
+                              className="border-2 border-[#cbc385] py-2 px-2 
+                               w-full
+                               text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
                             >
                               {search?.price ? search.price : "Price"}
                             </button>

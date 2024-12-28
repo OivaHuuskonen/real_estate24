@@ -1,4 +1,5 @@
-import SearchForm from "../components/forms/SearchForm";
+//import SearchForm from "../components/forms/SearchForm";
+import SearchFormzz from "../components/forms/SearchFormzz";
 import { useSearch } from "../context/search";
 import AdCard from "../components/cards/AdCard";
 
@@ -7,8 +8,13 @@ export default function Search() {
 
   return (
     <div className='w-full pb-10'>
-      <div className="flex justify-center py-10">
+      <br></br>
+      {/*<div className="flex justify-center">
       <SearchForm />
+      </div>*/}
+      <div>
+      <SearchFormzz />
+
       </div>
       <div name="seacrh">
         <div className="row">
