@@ -1,0 +1,89 @@
+/*.active {
+    background-color: #f5eadc !important;
+    border-color: #cbc385 !important;
+    border-radius: 0 !important;
+    
+  }
+
+  .btn-outline-secondary {
+    border-width: 4px; 
+  }*/
+
+  button {
+    background-color: #FFFAFA !important;
+    border-color: #cbc385 !important;
+    color: #333 !important; /* Tekstin väri */
+  }
+  
+  button:hover {
+    background-color: #e6d8c4 !important; /* Hover-efekti */
+    color: #333 !important; /* Tekstin väri hoverilla */
+  }
+  
+  .active {
+    background-color: #FFFAFA!important;
+    border-color: #cbc385 !important;
+    color: #333 !important;
+  }
+  
+  button {
+    padding: 10px 15px !important; /* Lisää paddingia */
+    font-size: 1rem; /* Tekstin koko */
+    border-width: 2px !important; /* Paksumpi reuna */
+    border-radius: 0px !important; /* Lisää pyöristetyt reunat */
+  }
+  
+  button:hover {
+    border-width: 2px !important;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Keskittää sisältö horisontaalisesti */
+    justify-content: center; /* Keskittää sisältö vertikaalisesti */
+  }
+  
+  .w-full {
+    margin-bottom: 20px; /* Lisää tilaa nappirivin ja kentän väliin */
+  }
+
+  
+/*.dropdown-menu.show {
+  z-index: 1050; /* Z-indeksi, jotta menu näkyy muiden elementtien päällä */
+  /*position: absolute; /* Varmistetaan, että menu sijoittuu oikein */
+/*}
+
+.google-places-autocomplete__dropdown-container { 
+    z-index: 1050; *//* Z-indeksi Google Places Autocomplete -pudotusvalikolle */ 
+   /* position: absolute;*/ /* Varmistetaan, että pudotusvalikko sijoittuu oikein */
+/*}*/
+
+.button-group {
+  flex-wrap: wrap !important;
+  overflow: auto;
+}
+
+.button-group > .btn {
+  flex: 1 1 auto;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .button-group > .btn {
+    /*width: 100%;*/
+    flex: 1;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.dropdown-menu.show {
+  z-index: 1050; /* Z-indeksi, jotta menu näkyy muiden elementtien päällä */
+  position: absolute; /* Varmistetaan, että menu sijoittuu oikein */
+}
+
+.google-places-autocomplete__dropdown-container {
+  z-index: 1050; /* Z-indeksi Google Places Autocomplete -pudotusvalikolle */
+  position: absolute; /* Varmistetaan, että pudotusvalikko sijoittuu oikein */
+}

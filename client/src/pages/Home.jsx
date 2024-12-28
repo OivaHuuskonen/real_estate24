@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../context/auth";
 import axios from "axios";
 import AdCard from "../components/cards/AdCard";
-import SearchForm from "../components/forms/SearchForm";
+//import SearchForm from "../components/forms/SearchForm";
+import SearchFormRB from "../components/forms/SearchFormRB";
 //import leafyIcon from '../assets/leafy.png'; 
 //import artNouveau from '../assets/art-nouveau.png'
 
@@ -18,9 +19,6 @@ import SearchForm from "../components/forms/SearchForm";
 
 
 minulla on react / vite / tailwindcss "kiinteistövälitys mern stack" jota koe julkaisen render kautta. Sovelluksessa on ideana se että asiakas voi etsiä google maps / places haun avulla kohteita ympäristöstään. Sovellus toimii suunnilleen, näyttää hyvälle suurilta näytöiltä mutta älypuhelin näytöllä <SerachForm /> nappirivistö vuotaa yli näytön oikeasta reunasta, myöskään "price" napin alasveto valikko ei toimi. Osaatko kertoa miten nämä asiat olisi mahdollista korjata? Koodi on nyt:
-
-
-
 */
 
 const PageHeader = ({ title }) => (
@@ -56,8 +54,9 @@ export default function Home() {
 
   return (
     <div name='home' className='max-w-screen w-full pb-10'>
-      <div className="flex justify-center py-10 mx-auto">
-        <SearchForm />
+     
+        <div className="flex justify-center py-10 mx-auto">
+        <SearchFormRB />
         </div>
         <div name="header" className="w-full">
         <PageHeader title="For Sell"/>

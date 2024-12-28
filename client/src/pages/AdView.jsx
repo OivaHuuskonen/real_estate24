@@ -25,8 +25,8 @@ export default function AdView() {
       try {
         const { data } = await axios.get(`/ad/${params?.slug}`);
         console.log('ad-objekti:', data.ad); // Tarkastellaan ad-objektin sisältöä
-        setAd(data?.ad);
-        setRelated(data?.related);
+        setAd(data?.ad || {});
+        setRelated(data?.related || []);
       } catch (err) {
         console.log(err);
       }
@@ -60,9 +60,62 @@ export default function AdView() {
     }
   };
 
+  if (!ad || Object.keys(ad).length === 0) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
-      <div className="flex">
+
+
+<div className="flex flex-col sm:grid sm:grid-cols-3 gap-4 pt-10 pb-10">
+  {/* Ylärivi (napit ja LikeUnlike) */}
+  <div className="flex flex-col sm:flex-row sm:col-span-3 justify-between items-center mb-4">
+    {/*<button
+      type="button"
+      className="text-white bg-[#51829B] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+    >
+      {ad.type} for {ad.action}
+    </button>*/}
+    <div className="py-4">{ad?.sold ? "❌ Off market" : "✅ In market"}</div>
+    <LikeUnlike ad={ad} />
+  </div>
+
+  {/* Tila (In Market / Off Market) 
+  <div className="col-span-3 text-center mb-4 sm:mb-0">
+    <div className="py-4">{ad?.sold ? "❌ Off market" : "✅ In market"}</div>
+  </div>*/}
+
+  {/* Osoite ja ominaisuudet */}
+  <div className="col-span-3 grid sm:grid-cols-2 items-center gap-4 mb-4">
+    <h1 className="text-3xl pb-4">{ad.address}</h1>
+    <AdFeatures ad={ad} />
+  </div>
+
+  {/* Hinta ja julkaisuajankohta */}
+  <div className="col-span-3 grid sm:grid-cols-2 items-center gap-4 mb-4">
+    <h1 className="text-3xl pb-2">{formatNumber(ad.price)}€</h1>
+    <p className="text-muted">{dayjs(ad?.createdAt).fromNow()}</p>
+  </div>
+
+  {/* Kuvagalleria */}
+  <div className="col-span-3">
+    <CustomImageGallery photos={generatePhotosArray(ad?.photos)} />
+  </div>
+
+  {/* Google Maps -kortti */}
+  {ad?.location && (
+    <div className="col-span-3 mt-4">
+      <MapCard ad={ad} />
+    </div>
+  )}
+</div>
+
+
+
+
+
+     {/* <div className="flex">
         <div className="grid grid-cols-3 gap-4 pt-10 pb-10">
           <div className="col-span-1 p-2">
             <div className="col-span-2 flex justify-between ">
@@ -85,12 +138,11 @@ export default function AdView() {
             <CustomImageGallery photos={generatePhotosArray(ad?.photos)} />
           </div>
         </div>
-      </div>
+      </div>*/}
 
-      <div className="container mb-5">
+      {/*<div className="container mb-5">
         <div className="row">
           <div className="col-lg-8 offset-lg-2 mt-3">
-            <MapCard ad={ad} />
             <br />
             <br />
             <p className="text-xl pl-6">
@@ -105,7 +157,7 @@ export default function AdView() {
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
 
       <div className="container">
         <ContactSeller ad={ad} />

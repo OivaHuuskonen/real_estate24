@@ -16,6 +16,8 @@ const innitialState = {
 const SearchProvider = ({ children }) => {
   const [search, setSearch] = useState(innitialState);
 
+  console.log("SearchProvider render", { search, innitialState });
+
   return (
     <SearchContext.Provider value={[search, setSearch, innitialState]}>
       {children}
