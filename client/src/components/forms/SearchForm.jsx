@@ -1,7 +1,6 @@
 import { useSearch } from "../../context/search";
 import { useState } from "react";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
-//import { GOOGLE_PLACES_KEY } from "../../config";
 import { sellPrices, rentPrices } from "../../helpers/priceList";
 import queryString from "query-string";
 import { useNavigate } from "react-router-dom";
@@ -90,7 +89,11 @@ export default function SearchForm() {
                             </button>
                             <div className="relative flex-grow">
                             <button
+<<<<<<< HEAD
                               onClick={toggleDropdown} //{/*onClick={() => setSearch({ ...search, price: search.price ? "" : "Price" })}*/}
+=======
+                              onClick={toggleDropdown} 
+>>>>>>> 512733070f3c564485176c50d9134965b66cff8a
                               className="border-2 border-[#cbc385] py-2 px-2 
                                w-full
                                text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
@@ -130,4 +133,4 @@ export default function SearchForm() {
             </div>
             </div>
     )
-}
+} 
