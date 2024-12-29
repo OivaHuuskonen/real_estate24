@@ -68,7 +68,7 @@ export default function SearchFormzz() {
           }}
         />
       </div>
-      <div className="flex justify-center w-full px-0 pt-4 flex-wrap">
+      <div className="flex justify-center w-full px-2 pt-4 flex-wrap">
         <ButtonGroup>
           <Button
             onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
