@@ -130,35 +130,3 @@ export default function SearchFormzz() {
   );
 }
 
-
-
-
-
-/*import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-
-function SearchFormzz() {
-  console.log("SearchFormzz is rendering");
-  return (
-    <div className="flex justify-center w-full px-2 pt-4">
-    <ButtonGroup>
-      <Button>Buy</Button>
-      <Button>Rent</Button>
-      <Button>House</Button>
-      <Button>Land</Button>
-
-      <DropdownButton as={ButtonGroup} title="Price" id="bg-nested-dropdown">
-        <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>
-        <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>
-      </DropdownButton>
-
-      <Button>Search</Button>
-    </ButtonGroup>
-    </div>
-  );
-}
-
-export default SearchFormzz;*/

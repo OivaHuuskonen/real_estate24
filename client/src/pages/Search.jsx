@@ -9,12 +9,8 @@ export default function Search() {
   return (
     <div className='w-full pb-10'>
       <br></br>
-      {/*<div className="flex justify-center">
-      <SearchForm />
-      </div>*/}
-      <div>
+     <div className="flex justify-center">
       <SearchFormzz />
-
       </div>
       <div name="seacrh">
         <div className="row">
@@ -26,12 +22,6 @@ export default function Search() {
             <div className="col-md-12 text-center p-5">No properties found yet</div>
           )}
         </div>
-
-        {/*<div className="row">
-          {search.results?.map((item) => (
-            <AdCard ad={item} key={item._id} />
-          ))}
-        </div>*/}
 
         <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-0 gap-y-10 place-items-center px-20 py-10 bg-[#F5F5F5]">
           {search.results?.map((item, index) => (
