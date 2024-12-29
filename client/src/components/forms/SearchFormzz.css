@@ -1,0 +1,6 @@
+.custom-dropdown .dropdown-toggle {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0; /* Remove rounded corners */
+}
