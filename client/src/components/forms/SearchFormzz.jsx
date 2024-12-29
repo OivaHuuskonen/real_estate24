@@ -54,7 +54,7 @@ export default function SearchFormzz() {
 
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="w-full px-4 max-w-2xl">
+      <div className="w-full px-2 max-w-2xl">
         <GooglePlacesAutocomplete
           apiKey={import.meta.env.VITE_GOOGLE_PLACES_KEY}
           apiOptions="au"
