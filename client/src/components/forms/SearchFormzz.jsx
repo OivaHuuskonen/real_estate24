@@ -67,29 +67,29 @@ export default function SearchFormzz() {
           }}
         />
       </div>
-      <div className="flex justify-center w-full px-2 pt-4">
+      <div className="flex justify-center w-full px-0 pt-4">
         <ButtonGroup>
           <Button
             onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
-            className="border-2 border-[#cbc385] py-2 px-4 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
+            className="border-2 border-[#cbc385] py-2 px-4 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] btn-sm"
           >
             {search.action === "Buy" ? "☑️" : ""} Buy
           </Button>
           <Button
             onClick={() => setSearch({ ...search, action: "Rent", price: "" })}
-            className="border-2 border-[#cbc385] py-2 px-4 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
+            className="border-2 border-[#cbc385] py-2 px-4 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] btn-sm"
           >
             {search.action === "Rent" ? "☑️ Rent" : "Rent"}
           </Button>
           <Button
             onClick={() => setSearch({ ...search, type: "House", price: "" })}
-            className="border-2 border-[#cbc385] py-2 px-4 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
+            className="border-2 border-[#cbc385] py-2 px-4 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] btn-sm"
           >
             {search.type === "House" ? "☑️ House" : "House"}
           </Button>
           <Button
             onClick={() => setSearch({ ...search, type: "Land", price: "" })}
-            className="border-2 border-[#cbc385] py-2 px-4 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
+            className="border-2 border-[#cbc385] py-2 px-4 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] btn-sm"
           >
             {search.type === "Land" ? "☑️Land" : "Land"}
           </Button>
@@ -97,7 +97,7 @@ export default function SearchFormzz() {
             as={ButtonGroup}
             title={search?.price ? search.price : "Price"}
             id="bg-nested-dropdown"
-            className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
+            className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] btn-sm"
             onClick={toggleDropdown}
           >
             {search.action === "Buy"
@@ -120,7 +120,7 @@ export default function SearchFormzz() {
           </DropdownButton>
           <Button
             onClick={handleSearch}
-            className="border-2 border-[#cbc385] py-2 px-4 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
+            className="border-2 border-[#cbc385] py-2 px-4 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab] btn-sm"
           >
             Search
           </Button>
