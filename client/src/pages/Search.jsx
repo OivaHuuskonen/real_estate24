@@ -1,4 +1,4 @@
-//import SearchFormRB from "../components/forms/SearchFormRB";
+//import SearchForm from "../components/forms/SearchForm";
 import SearchFormzz from "../components/forms/SearchFormzz";
 import { useSearch } from "../context/search";
 import AdCard from "../components/cards/AdCard";
@@ -8,7 +8,8 @@ export default function Search() {
 
   return (
     <div className='w-full pb-10'>
-      <div className="flex justify-center">
+      <br></br>
+     <div className="flex justify-center">
       <SearchFormzz />
       </div>
       <div name="seacrh">

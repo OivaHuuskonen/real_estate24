@@ -54,7 +54,7 @@ export default function SearchFormzz() {
 
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="w-full px-2 max-w-2xl">
+      <div className="w-full max-w-2xl px-4">
         <GooglePlacesAutocomplete
           apiKey={import.meta.env.VITE_GOOGLE_PLACES_KEY}
           apiOptions="au"
@@ -67,7 +67,7 @@ export default function SearchFormzz() {
           }}
         />
       </div>
-      <div className="flex justify-center w-full px-2 pt-2">
+      <div className="flex justify-center w-full px-2 pt-4">
         <ButtonGroup>
           <Button
             onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
@@ -129,3 +129,4 @@ export default function SearchFormzz() {
     </div>
   );
 }
+
