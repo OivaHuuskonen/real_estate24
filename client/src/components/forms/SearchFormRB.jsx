@@ -69,7 +69,7 @@ export default function SearchFormRB() {
       
       <br/>
 
-      <ButtonGroup className="w-100 flex-nowrap overflow-auto">
+      <ButtonGroup className="flex justify-center w-full px-2">
         <Button
           onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
           className={`flex-grow-1 ${search.action === "Buy" && "active"}`}
