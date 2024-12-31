@@ -23,10 +23,17 @@ function MapCard({ ad }) {
 
   const [map, setMap] = useState(null);
 
-  const onLoad = useCallback(function callback(map) {
+  /*const onLoad = useCallback(function callback(map) {
     console.log("Map loaded");
     const bounds = new window.google.maps.LatLngBounds(center);
     map.fitBounds(bounds);
+    setMap(map);
+  }, [center]);*/
+
+  const onLoad = useCallback(function callback(map) {
+    console.log("Map loaded");
+    map.setCenter(center);
+    map.setZoom(12);
     setMap(map);
   }, [center]);
 
@@ -39,7 +46,7 @@ function MapCard({ ad }) {
   }
 
   return isLoaded ? (
-    <div className="w-full h-96 p-2 mx-4">
+    <div className="w-full h-96">
       <GoogleMap
         mapContainerStyle={{ width: '100%', height: '100%' }}
         center={center}
