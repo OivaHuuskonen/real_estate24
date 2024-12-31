@@ -68,21 +68,18 @@ export default function AdView() {
     <>
 
 
-<div className="flex flex-col sm:grid sm:grid-cols-3 gap-4 pt-10 pb-10">
-  {/* Ylärivi (napit ja LikeUnlike) */}
+<div className="flex flex-col sm:grid sm:grid-cols-3 gap-4 pt-10 pb-10"> 
+<div className="flex flex-row sm:col-span-3 justify-between items-center">
+<div className="pl-4">{ad?.sold ? "❌ Off market" : "✅ In market"}</div> 
+<LikeUnlike ad={ad} className="relative right-4 sm:right-0" /> </div>
+
+
+{/*<div className="flex flex-col sm:grid sm:grid-cols-3 gap-4 pt-10 pb-10">  
   <div className="flex flex-col sm:flex-row sm:col-span-3 justify-between">
-    {/*<button
-      type="button"
-      className="text-white bg-[#51829B] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-    >
-      {ad.type} for {ad
-      .action}
-    </button>
-    <div className="flex items-center">*/}
-    <div className="pl-4">{ad?.sold ? "❌ Off market" : "✅ In market"}</div>
-    {/*<LikeUnlike ad={ad} className="flex-grow mr-4" />*/}
+      <div className="pl-4">{ad?.sold ? "❌ Off market" : "✅ In market"}</div>
+   
     <LikeUnlike ad={ad} style={{ position: "relative", right: "4rem" }} />
-  </div>
+  </div>*/}
   
 
   {/* Tila (In Market / Off Market) 
@@ -91,25 +88,25 @@ export default function AdView() {
   </div>*/}
 
   {/* Osoite ja ominaisuudet */}
-  <div className="col-span-3 grid sm:grid-cols-2 items-center gap-4 mb-4">
-    <h1 className="text-3xl pl-4 pb-4">{ad.address}</h1>
+  <div className="col-span-3 grid sm:grid-cols-2 items-center gap-4">
+    <h1 className="text-3xl pl-4">{ad.address}</h1>
     <AdFeatures ad={ad} />
   </div>
 
   {/* Hinta ja julkaisuajankohta */}
   <div className="col-span-3 grid sm:grid-cols-2 items-center gap-4 mb-4">
-    <h1 className="text-3xl pl-4 pb-2">{formatNumber(ad.price)}€</h1>
-    <p className="text-muted">{dayjs(ad?.createdAt).fromNow()}</p>
+    <h1 className="text-3xl pl-4">{formatNumber(ad.price)}€</h1>
+    <p className="text-muted pl-4">{dayjs(ad?.createdAt).fromNow()}</p>
   </div>
 
   {/* Kuvagalleria */}
-  <div className="col-span-3">
+  <div className="col-span-3 mb-2">
     <CustomImageGallery photos={generatePhotosArray(ad?.photos)} />
   </div>
 
   {/* Google Maps -kortti */}
   {ad?.location && (
-    <div className="col-span-3 mt-4">
+    <div className="col-span-3">
       <MapCard ad={ad} />
     </div>
   )}
