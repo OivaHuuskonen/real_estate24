@@ -70,16 +70,20 @@ export default function AdView() {
 
 <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4 pt-10 pb-10">
   {/* Ylärivi (napit ja LikeUnlike) */}
-  <div className="flex flex-col sm:flex-row sm:col-span-3 justify-between items-center mb-4">
+  <div className="flex flex-col sm:flex-row sm:col-span-3 justify-between">
     {/*<button
       type="button"
       className="text-white bg-[#51829B] hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
     >
-      {ad.type} for {ad.action}
-    </button>*/}
-    <div className="py-4">{ad?.sold ? "❌ Off market" : "✅ In market"}</div>
-    <LikeUnlike ad={ad} />
+      {ad.type} for {ad
+      .action}
+    </button>
+    <div className="flex items-center">*/}
+    <div className="pl-4">{ad?.sold ? "❌ Off market" : "✅ In market"}</div>
+    {/*<LikeUnlike ad={ad} className="flex-grow mr-4" />*/}
+    <LikeUnlike ad={ad} style={{ position: "relative", right: "4rem" }} />
   </div>
+  
 
   {/* Tila (In Market / Off Market) 
   <div className="col-span-3 text-center mb-4 sm:mb-0">
@@ -88,13 +92,13 @@ export default function AdView() {
 
   {/* Osoite ja ominaisuudet */}
   <div className="col-span-3 grid sm:grid-cols-2 items-center gap-4 mb-4">
-    <h1 className="text-3xl pb-4">{ad.address}</h1>
+    <h1 className="text-3xl pl-4 pb-4">{ad.address}</h1>
     <AdFeatures ad={ad} />
   </div>
 
   {/* Hinta ja julkaisuajankohta */}
   <div className="col-span-3 grid sm:grid-cols-2 items-center gap-4 mb-4">
-    <h1 className="text-3xl pb-2">{formatNumber(ad.price)}€</h1>
+    <h1 className="text-3xl pl-4 pb-2">{formatNumber(ad.price)}€</h1>
     <p className="text-muted">{dayjs(ad?.createdAt).fromNow()}</p>
   </div>
 

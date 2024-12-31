@@ -53,11 +53,11 @@ export default function LikeUnlike({ ad }) {
   return (
     <>
     {auth.user?.wishlist?.includes(ad?._id) ? (
-      <span className="text-3xl cursor-pointer">
+      <span className="text-3xl cursor-pointer mr-4">
         <FcLike onClick={handleUnlike} />
       </span>
     ) : (
-      <span className="text-3xl cursor-pointer">
+      <span className="text-3xl cursor-pointer mr-4">
         <FcLikePlaceholder onClick={handleLike} />
       </span>
     )}

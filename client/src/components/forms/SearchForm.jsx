@@ -21,7 +21,7 @@ export default function SearchForm() {
       price: name,
       priceRange: array,
     });
-    setDropdownOpen(false); // Sulkee pudotusvalikon valinnan jälkeen
+    setDropdownOpen(false); 
   };
  
   const handleSearch = async () => {
@@ -62,34 +62,43 @@ export default function SearchForm() {
                         }}
                       />
                       </div>
-                      <div className="flex justify-between w-full px-2 pt-4">
+
+                      <div className="flex justify-center w-full px-2 pt-4">
                         <button
                             onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
-                            className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
+                            className="border-2 border-[#cbc385] py-2 px-4 text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
                           >
                             {search.action === "Buy" ? "☑️" : ""} Buy
                           </button>
                             <button
                               onClick={() => setSearch({ ...search, action: "Rent", price: "" })}
-                              className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
+                              className="border-2 border-[#cbc385] py-2 px-4 text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
                             >
                               {search.action === "Rent" ? "☑️ Rent" : "Rent"}
                             </button>
+                          
                             <button
                               onClick={() => setSearch({ ...search, type: "House", price: "" })}
-                              className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
+                              className="border-2 border-[#cbc385] py-2 px-4 text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
                             >
                               {search.type === "House" ? "☑️ House" : "House"}
                             </button>
                             <button
                               onClick={() => setSearch({ ...search, type: "Land", price: "" })}
-                              className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
+                              className="border-2 border-[#cbc385] py-2 px-4 text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
                             >
                               {search.type === "Land" ? "☑️Land" : "Land"}
                             </button>
-                            <div className="relative flex-grow">
+                            </div>
+
+                           {/* <div className="relative flex-grow">
+                           <div className="flex justify-between w-full px-2">*/}
+
+
+                            <div className="flex flex-wrap justify-center w-full px-2 md:flex-nowrap">
+                            <div className="w-full md:w-1/5 lg:w-1/5 xl:w-1/5">
                             <button
-                              onClick={toggleDropdown} //{/*onClick={() => setSearch({ ...search, price: search.price ? "" : "Price" })}*/}
+                              onClick={toggleDropdown} 
                               className="border-2 border-[#cbc385] py-2 px-2 
                                w-full
                                text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
@@ -120,12 +129,16 @@ export default function SearchForm() {
             ))}
             </ul>
             </div>
+
+            <div className="w-full md:w-1/5 lg:w-1/5 xl:w-1/5">
+           
             <button 
             onClick={handleSearch}
-            className="border-2 border-[#cbc385] py-2 px-2 flex-grow text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
+            className="border-2 border-[#cbc385] py-2 px-2 w-full text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
             >
             Search
             </button>
+            </div>
             </div>
             </div>
     )
