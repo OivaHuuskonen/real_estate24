@@ -5,6 +5,7 @@ import { sellPrices, rentPrices } from "../../helpers/priceList";
 import queryString from "query-string";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { VscSettings } from "react-icons/vsc";
 
 export default function SearchForm() {
   const [search, setSearch] = useSearch();
@@ -64,7 +65,11 @@ export default function SearchForm() {
                       </div>
 
                       <div className="flex justify-center w-full px-2 pt-4">
-                        <button
+
+                      <VscSettings />
+
+
+                      {/*  <button
                             onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
                             className="border-2 border-[#cbc385] py-2 px-4 text-[#000000] hover:bg-[#f5eadc] hover:border-[#f9b4ab]"
                           >
@@ -91,8 +96,7 @@ export default function SearchForm() {
                             </button>
                             </div>
 
-                           {/* <div className="relative flex-grow">
-                           <div className="flex justify-between w-full px-2">*/}
+                 
 
 
                             <div className="flex flex-wrap justify-center w-full px-2 md:flex-nowrap">
@@ -138,7 +142,7 @@ export default function SearchForm() {
             >
             Search
             </button>
-            </div>
+            </div>*/}
             </div>
             </div>
     )
