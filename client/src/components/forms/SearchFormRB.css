@@ -63,18 +63,16 @@
   display: flex; 
   flex-wrap: wrap; 
   justify-content: space-between;
+  gap: 0;
 }
 
 .button-group > .btn, 
-.button-group > .dropdown { 
-  flex: 1 0 21%; /* Sopiva leveys buy, rent, house ja land napille */ 
-  margin: 0 2% 10px 0; /* Marginaali napin ympärille */
+.button-group > .dropdown, 
+.button-group > .price-button, 
+.button-group > .search-button 
+{ flex: 1 0 21%; margin: 0; /* Poistaa tilan nappien väliltä */ 
+  padding: 0; /* Poistaa täytteen nappien ympäriltä */ 
 }
-
-
-.button-group > .price-button { flex: 1 0 100%; /* Leveys 100% */ margin-bottom: 10px; /* Väli yläpuolen nappien kanssa */ } 
-.button-group > .search-button { flex: 1 0 100%; /* Leveys 100% */ }
-
 
 
 /* Mediatiedustelu pienemmille näytöille */
@@ -84,8 +82,22 @@
   .button-group > .price-button, 
   .button-group > .search-button 
   { flex: 1 0 100%; /* Napit täysleveänä pienillä näytöillä */
+    margin: 0; /* Poistaa tilan nappien väliltä */
+    padding: 0; /* Poistaa täytteen nappien ympäriltä */
   }
 }
+
+.button-group > .btn, 
+.button-group > .dropdown, 
+.button-group > .price-button, 
+.button-group > .search-button { 
+  border-radius: 0; /* Poistaa nappien kulmien pyöristykset */ 
+} /* Poistetaan väli ylä- ja alapuolella olevien nappien väliltä */ 
+.button-group > .btn + .btn, 
+.button-group > .dropdown + .btn, 
+.button-group > .btn + .dropdown, 
+.button-group > .price-button + .btn,
+.button-group > .search-button + .btn { margin-top: 0; }
 
 .dropdown-menu.show {
   z-index: 1050; /* Z-indeksi, jotta menu näkyy muiden elementtien päällä */
