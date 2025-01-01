@@ -60,21 +60,30 @@
 /*}*/
 
 .button-group {
-  flex-wrap: wrap !important;
-  overflow: auto;
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-between;
 }
 
-.button-group > .btn {
-  flex: 1 1 auto;
-  max-width: 100%;
+.button-group > .btn, 
+.button-group > .dropdown { 
+  flex: 1 0 21%; /* Sopiva leveys buy, rent, house ja land napille */ 
+  margin: 0 2% 10px 0; /* Marginaali napin ympärille */
 }
 
-@media (max-width: 768px) {
-  .button-group > .btn {
-    /*width: 100%;*/
-    flex: 1;
-    max-width: 100%;
-    margin: 0 auto;
+
+.button-group > .price-button { flex: 1 0 100%; /* Leveys 100% */ margin-bottom: 10px; /* Väli yläpuolen nappien kanssa */ } 
+.button-group > .search-button { flex: 1 0 100%; /* Leveys 100% */ }
+
+
+
+/* Mediatiedustelu pienemmille näytöille */
+  @media (max-width: 768px) { 
+  .button-group > .btn, 
+  .button-group > .dropdown, 
+  .button-group > .price-button, 
+  .button-group > .search-button 
+  { flex: 1 0 100%; /* Napit täysleveänä pienillä näytöillä */
   }
 }
 
