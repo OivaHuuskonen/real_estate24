@@ -69,6 +69,142 @@ export default function SearchFormRB() {
       
       <br/>
 
+      <ButtonGroup className="button-group">
+        <Button
+          onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
+          className={`btn ${search.action === "Buy" && "active"}`}
+        >
+          {search.action === "Buy" ? "☑️" : ""} Buy
+        </Button>
+        <Button
+          onClick={() => setSearch({ ...search, action: "Rent", price: "" })}
+          className={`btn ${search.action === "Rent" && "active"}`}
+        >
+          {search.action === "Rent" ? "☑️ Rent" : "Rent"}
+        </Button>
+        <Button
+          onClick={() => setSearch({ ...search, type: "House", price: "" })}
+          className={`btn ${search.type === "House" && "active"}`}
+        >
+          {search.type === "House" ? "☑️ House" : "House"}
+        </Button>
+        <Button
+          onClick={() => setSearch({ ...search, type: "Land", price: "" })}
+          className={`btn ${search.type === "Land" && "active"}`}
+        >
+          {search.type === "Land" ? "☑️ Land" : "Land"}
+        </Button>
+        <Dropdown as={ButtonGroup} className="price-button">
+          <Button
+            onClick={toggleDropdown}
+          >
+            {search?.price ? search.price : "Price"}
+          </Button>
+          <Dropdown.Menu show={dropdownOpen} style={{ zIndex: 1050 }}>
+            {search.action === "Buy"
+              ? sellPrices.map((item) => (
+                  <Dropdown.Item
+                    key={item._id}
+                    onClick={() => handlePriceSelect(item.name, item.array)}
+                  >
+                    {item.name}
+                  </Dropdown.Item>
+                ))
+              : rentPrices.map((item) => (
+                  <Dropdown.Item
+                    key={item._id}
+                    onClick={() => handlePriceSelect(item.name, item.array)}
+                  >
+                    {item.name}
+                  </Dropdown.Item>
+                ))}
+          </Dropdown.Menu>
+        </Dropdown>
+        <Button
+          onClick={handleSearch}
+          className="search-button"
+          style={{ borderColor: '#cbc385', borderWidth: '2px' }}
+        >
+          Search
+        </Button>
+      </ButtonGroup>
+    </div>
+  );
+}
+
+
+
+/*import { useSearch } from "../../context/search";
+import { useState } from "react";
+import GooglePlacesAutocomplete from "react-google-places-autocomplete";
+import { sellPrices, rentPrices } from "../../helpers/priceList";
+import queryString from "query-string";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Button from 'react-bootstrap/Button';
+import Dropdown from 'react-bootstrap/Dropdown';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import './SearchFormRB.css';
+
+export default function SearchFormRB() {
+  const [search, setSearch] = useSearch();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  const handlePriceSelect = (name, array) => {
+    setSearch({
+      ...search,
+      price: name,
+      priceRange: array,
+    });
+    setDropdownOpen(false);
+  };
+
+  const handleSearch = async () => {
+    setSearch({ ...search, loading: false });
+    try {
+      const { results, page, price, ...rest } = search;
+      const query = queryString.stringify(rest);
+      const { data } = await axios.get(`/search?${query}`);
+      if (search?.page !== "/search") {
+        setSearch((prev) => ({ ...prev, results: data, loading: false }));
+        navigate("/search");
+      } else {
+        setSearch((prev) => ({
+          ...prev,
+          results: data,
+          page: window.location.pathname,
+          loading: false,
+        }));
+      }
+    } catch (err) {
+      console.log(err);
+      setSearch({ ...search, loading: false });
+    }
+  };
+
+  return (
+    <div className="container">
+      <div className="w-full max-w-2xl" style={{ position: 'relative', zIndex: 1050 }}>
+        <GooglePlacesAutocomplete
+          apiKey={import.meta.env.VITE_GOOGLE_PLACES_KEY}
+          apiOptions="au"
+          selectProps={{
+            defaultInputValue: search?.address,
+            placeholder: "Search for address..",
+            onChange: ({ value }) => {
+              setSearch({ ...search, address: value.description });
+            },
+          }}
+        />
+      </div>
+      
+      <br/>
+
       <ButtonGroup className="flex justify-center w-full px-2">
         <Button
           onClick={() => setSearch({ ...search, action: "Buy", price: "" })}
@@ -130,7 +266,7 @@ export default function SearchFormRB() {
       </ButtonGroup>
     </div>
   );
-}
+}*/
 
 
 
