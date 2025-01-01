@@ -176,18 +176,23 @@ export default function AdView() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 justify-center mb-10 gap-y-10 place-items-center px-20 py-10 bg-[#F5F5F5]">
-        {related?.map((ad, index) => (
+
+
+      <div className="grid grid-cols-1 md:grid-cols-3 
+      justify-center mb-10 gap-y-10 
+      place-items-center 
+      px-4 sm:px-8 py-10 bg-[#FFFAFA]">
+        {related?.map((ad) => (
           <AdCard
             ad={ad}
             key={ad._id}
-            className={
+            /*className={
               index % 3 === 0
                 ? "justify-self-end"
                 : index % 3 === 1
                 ? ""
                 : "justify-self-start"
-            }
+            }*/
           />
         ))}
       </div>

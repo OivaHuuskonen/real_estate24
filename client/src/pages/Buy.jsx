@@ -4,6 +4,7 @@ import axios from "axios";
 import AdCard from "../components/cards/AdCard";
 import SearchForm from "../components/forms/SearchForm";
 
+
 const PageHeader = ({ title }) => (
   <div className="mx-auto w-full text-align:left pb-16 pt-20 bg-[#51829B]">
     <h1 className="pl-10 text-6xl sm:text-7xl font-bold text-[#F5F5F5]">
