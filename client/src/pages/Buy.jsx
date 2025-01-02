@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../context/auth";
 import axios from "axios";
 import AdCard from "../components/cards/AdCard";
-import SearchForm from "../components/forms/SearchForm";
+import SearchMain from "../components/forms/SearchMain";
 
 
 const PageHeader = ({ title }) => (
@@ -34,8 +34,8 @@ export default function Buy() {
 
   return (
     <div className='w-full pb-10'>
-    <div className="flex justify-center py-10">
-      <SearchForm />
+      <div className="flex justify-center py-10 mx-auto">
+      <SearchMain />
     </div>
       <div name="buy">
       <PageHeader title="For Sell"/>

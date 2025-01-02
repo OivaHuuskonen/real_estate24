@@ -1,0 +1,50 @@
+.location-input {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  button {
+    background-color: #FFFAFA !important;
+    border-width: 2px !important; /* Paksumpi reuna */
+    border-color: #cbc385 !important;
+    border-radius: 0% !important;
+    color: #333 !important; /* Tekstin väri */
+    padding: 20px 35px !important; /* Lisää paddingia */
+  }
+  
+  button:hover {
+    background-color: #e6d8c4 !important; /* Hover-efekti */
+    color: #333 !important; /* Tekstin väri hoverilla */
+  }
+
+  .settings-button {
+    border-radius: 5px !important;
+    padding: 10px 15px !important;
+    overflow: hidden;
+  }
+  
+  .active {
+    background-color: #FFFAFA!important;
+    border-color: #cbc385 !important;
+    color: #333 !important;
+  }
+  
+  .button-group { display: flex; gap: 0; }
+  
+  .button-group button {
+    margin-right: 0;
+    flex-grow: 1;
+  }
+  
+  .settings-button {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Keskittää sisältö horisontaalisesti */
+    justify-content: center; /* Keskittää sisältö vertikaalisesti */
+  }
+  
