@@ -1,26 +1,511 @@
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px; /* Väli hakukentän ja painikkeen välillä */
+}
+
+.google-places-input {
+  flex-grow: 4; /* Tekstikenttä vie 4/5 leveydestä */
+}
+
+.settings-icon-button {
+  flex-grow: 0;
+  background-color: #FFFAFA !important;
+  border: 2px solid #cbc385 !important;
+  border-radius: 50% !important; /* Täysin pyöreä muoto */
+  padding: 0 !important;
+  color: #333 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 40px !important;
+  width: 40px !important; /* Leveys ja korkeus täsmälleen samat */
+  margin-left: auto !important; /* Siirtää napin oikeaan reunaan */
+}
+
+/* Piilotetaan settings-nappi suuremmilla näytöillä */ 
+@media (min-width: 992px) { 
+  .settings-icon-button 
+  { display: none !important; } }
+
+.settings-icon-button:hover {
+  background-color: #e6d8c4 !important;
+  color: #333 !important;
+}
+
+/* Varmistetaan asettelu suuremmilla näytöillä */
+@media (min-width: 992px) {
+  .search-input-container {
+    gap: 20px; /* Suurempi väli hakukentän ja painikkeen välillä */
+  }
+  
+  .button-group {
+    margin-top: 15px; /* Lisää marginaali tekstikentän ja hakufiltterin nappien väliin */
+  }
+}
+
+/* Other styles remain unchanged */
 .location-input {
-    width: 100%;
-    margin-bottom: 15px;
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #FFFAFA !important;
+  border-width: 2px !important;
+  border-color: #cbc385 !important;
+  border-radius: 0% !important;
+  color: #333 !important;
+  padding: 20px 35px !important;
+}
+
+button:hover {
+  background-color: #e6d8c4 !important;
+  color: #333 !important;
+}
+
+.settings-button {
+  border-radius: 5px !important;
+  padding: 10px 15px !important;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.active {
+  background-color: #FFFAFA!important;
+  border-color: #cbc385 !important;
+  color: #333 !important;
+}
+
+.button-group { 
+  display: flex; 
+  gap: 0; 
+}
+
+.button-group button {
+  margin-right: 0;
+  flex-grow: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+/*.search-input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px; 
+}
+
+.google-places-input {
+  flex-grow: 4; 
+}
+
+.settings-icon-button {
+  flex-grow: 0; 
+  background-color: #FFFAFA !important;
+  border: 2px solid #cbc385 !important;
+  border-radius: 50% !important; 
+  padding: 5px !important;
+  color: #333 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 40px !important;
+  width: 40px !important;
+  min-width: 40px !important; 
+  min-height: 40px !important; 
+  margin-left: auto !important; 
+}
+
+.settings-icon-button:hover {
+  background-color: #e6d8c4 !important;
+  color: #333 !important;
+}
+
+
+.google-places-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.google-places-container .google-places-input {
+  flex: 4;
+}
+
+.google-places-container .settings-icon-button {
+  flex: 1;
+}
+
+
+.location-input {
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #FFFAFA !important;
+  border-width: 2px !important;
+  border-color: #cbc385 !important;
+  border-radius: 0% !important;
+  color: #333 !important;
+  padding: 20px 35px !important;
+}
+
+button:hover {
+  background-color: #e6d8c4 !important;
+  color: #333 !important;
+}
+
+.settings-button {
+  border-radius: 5px !important;
+  padding: 10px 15px !important;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.active {
+  background-color: #FFFAFA!important;
+  border-color: #cbc385 !important;
+  color: #333 !important;
+}
+
+.button-group { 
+  display: flex; 
+  gap: 0; 
+}
+
+.button-group button {
+  margin-right: 0;
+  flex-grow: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+*/
+
+
+
+
+
+
+
+/*.search-input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px; 
+}
+
+.google-places-input {
+  flex-grow: 4; 
+
+.settings-icon-button {
+  flex-grow: 0; 
+  background-color: #FFFAFA !important;
+  border: 2px solid #cbc385 !important;
+  border-radius: 30% !important;
+  padding: 5px !important;
+  color: #333 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 40px !important;
+  width: 20px !important;
+  margin-left: auto !important; 
+.settings-icon-button:hover {
+  background-color: #e6d8c4 !important;
+  color: #333 !important;
+}
+
+
+.google-places-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.google-places-container .google-places-input {
+  flex: 4;
+}
+
+.google-places-container .settings-icon-button {
+  flex: 1;
+}
+
+
+.location-input {
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #FFFAFA !important;
+  border-width: 2px !important;
+  border-color: #cbc385 !important;
+  border-radius: 0% !important;
+  color: #333 !important;
+  padding: 20px 35px !important;
+}
+
+button:hover {
+  background-color: #e6d8c4 !important;
+  color: #333 !important;
+}
+
+.settings-button {
+  border-radius: 5px !important;
+  padding: 10px 15px !important;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.active {
+  background-color: #FFFAFA!important;
+  border-color: #cbc385 !important;
+  color: #333 !important;
+}
+
+.button-group { 
+  display: flex; 
+  gap: 0; 
+}
+
+.button-group button {
+  margin-right: 0;
+  flex-grow: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}*/
+
+
+
+
+
+
+
+/*.search-input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px; 
+}
+
+.google-places-input {
+  flex-grow: 4; 
+}
+
+.settings-icon-button {
+  flex-grow: 1; 
+  background-color: #FFFAFA;
+  border: 2px solid #cbc385;
+  border-radius: 50%;
+  padding: 2px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 20px;
+  margin-left: auto; 
+}
+
+.settings-icon-button:hover {
+  background-color: #e6d8c4;
+  color: #333;
+}
+
+ 
+.location-input {
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #FFFAFA !important;
+  border-width: 2px !important;
+  border-color: #cbc385 !important;
+  border-radius: 0% !important;
+  color: #333 !important;
+  padding: 20px 35px !important;
+}
+
+button:hover {
+  background-color: #e6d8c4 !important;
+  color: #333 !important;
+}
+
+.settings-button {
+  border-radius: 5px !important;
+  padding: 10px 15px !important;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.active {
+  background-color: #FFFAFA!important;
+  border-color: #cbc385 !important;
+  color: #333 !important;
+}
+
+.button-group { 
+  display: flex; 
+  gap: 0; 
+}
+
+.button-group button {
+  margin-right: 0;
+  flex-grow: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+*/
+
+
+
+
+/*.search-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.settings-icon-button {
+  background-color: #FFFAFA;
+  border: 2px solid #cbc385;
+  border-radius: 50%;
+  padding: 5px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+}
+
+.settings-icon-button:hover {
+  background-color: #e6d8c4;
+  color: #333;
+}
+
+
+.location-input {
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #FFFAFA !important;
+  border-width: 2px !important;
+  border-color: #cbc385 !important;
+  border-radius: 0% !important;
+  color: #333 !important;
+  padding: 20px 35px !important;
+}
+
+button:hover {
+  background-color: #e6d8c4 !important;
+  color: #333 !important;
+}
+
+.settings-button {
+  border-radius: 5px !important;
+  padding: 10px 15px !important;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.active {
+  background-color: #FFFAFA!important;
+  border-color: #cbc385 !important;
+  color: #333 !important;
+}
+
+.button-group { 
+  display: flex; 
+  gap: 0; 
+}
+
+.button-group button {
+  margin-right: 0;
+  flex-grow: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}*/
+
+
+
+
+
+
+
+
+/*.location-input {
+    width: 80%;
+    margin-bottom: 5px;
   }
 
   button {
     background-color: #FFFAFA !important;
-    border-width: 2px !important; /* Paksumpi reuna */
+    border-width: 2px !important;  Paksumpi reuna 
     border-color: #cbc385 !important;
     border-radius: 0% !important;
-    color: #333 !important; /* Tekstin väri */
-    padding: 20px 35px !important; /* Lisää paddingia */
+    color: #333 !important;  Tekstin väri 
+    padding: 20px 35px !important;  Lisää paddingia 
   }
   
   button:hover {
-    background-color: #e6d8c4 !important; /* Hover-efekti */
-    color: #333 !important; /* Tekstin väri hoverilla */
+    background-color: #e6d8c4 !important;  Hover-efekti 
+    color: #333 !important;  Tekstin väri hoverilla 
   }
 
   .settings-button {
     border-radius: 5px !important;
     padding: 10px 15px !important;
     overflow: hidden;
+    width: 100%;
+    margin-top: 15px;
   }
   
   .active {
@@ -36,15 +521,10 @@
     flex-grow: 1;
   }
   
-  .settings-button {
-    width: 100%;
-    margin-top: 15px;
-  }
-
   .container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Keskittää sisältö horisontaalisesti */
-    justify-content: center; /* Keskittää sisältö vertikaalisesti */
+    align-items: center;  Keskittää sisältö horisontaalisesti 
+    justify-content: center;  Keskittää sisältö vertikaalisesti 
   }
-  
+  */
