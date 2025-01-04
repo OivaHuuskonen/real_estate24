@@ -10,13 +10,20 @@
   flex-grow: 4; /* Tekstikenttä vie 4/5 leveydestä */
 }
 
+*, ::before, ::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
 .settings-icon-button {
   flex-grow: 0;
   background-color: #FFFAFA !important;
   /*border: 2px solid #cbc385 !important;*/
 
   border-radius: 25% !important; /* Täysin pyöreä muoto */
-  border: 1px solid #D3D3D3 !important;
+  border: 1px solid #e5e7eb !important;
   
   padding: 0 !important;
   color: #333 !important;
