@@ -44,8 +44,11 @@ export default function Rent() {
         sm:grid-cols-1 
         md:grid-cols-2 
         xl:grid-cols-3   
-        justify-center mb-10 gap-y-10 place-items-center px-4 sm:px-8 py-10 bg-[#FFFAFA]">
-        {ads?.map((ad, index) => (
+        justify-center mb-10 gap-y-10 
+        place-items-center 
+        px-4 sm:px-8 
+        py-10 bg-[#FFFAFA]">
+        {ads?.map((ad) => (
           <AdCard 
             ad={ad} 
             key={ad._id} 

@@ -24,7 +24,9 @@ export default function Search() {
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-0 gap-y-10 place-items-center px-20 py-10 bg-[#F5F5F5]">
+        {/*<div className="grid grid-cols-1 md:grid-cols-3 
+        justify-center gap-0 gap-y-10 
+        place-items-center px-20 py-10 bg-[#F5F5F5]">
           {search.results?.map((item, index) => (
             <AdCard 
               ad={item} 
@@ -34,7 +36,22 @@ export default function Search() {
                          'justify-self-start'}
               />
           ))}
-        </div>
+        </div>*/}
+
+            <div className="grid grid-cols-1 
+                sm:grid-cols-1 
+                md:grid-cols-2 
+                xl:grid-cols-3   
+                justify-center mb-10 gap-y-10 
+                place-items-center 
+                px-4 sm:px-8 
+                py-10 bg-[#FFFAFA]">
+                  {search.results?.map((item, index) => (
+                    <AdCard 
+                    ad={item} 
+                    key={item._id} />
+                  ))}
+                </div>
 
       </div>
     </div>
