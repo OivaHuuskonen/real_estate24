@@ -51,7 +51,15 @@ export default function Wishlist() {
           <div className="flex justify-center py-10">
           <h1>You have liked {ads?.length} properties</h1>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-0 gap-y-10 place-items-center px-20 py-10 bg-[#FFFAFA]">
+          {/*<div className="grid grid-cols-1 
+          md:grid-cols-3 
+          justify-center 
+          gap-0 
+          gap-y-10 
+          place-items-center 
+          px-20 
+          py-10 
+          bg-[#FFFAFA]">
             {ads?.map((ad, index) => (
               <AdCard 
               ad={ad} 
@@ -61,7 +69,20 @@ export default function Wishlist() {
                 'justify-self-start'}
               />
             ))}
-          </div>
+          </div>*/}
+          
+                  <div className="grid grid-cols-1 
+                  sm:grid-cols-1 
+                  md:grid-cols-2 
+                  xl:grid-cols-3   
+                  justify-center mb-10 gap-y-10 
+                  place-items-center 
+                  px-4 sm:px-8 
+                  py-10 bg-[#FFFAFA]">
+                    {ads?.map((ad) => (
+                      <AdCard ad={ad} key={ad._id} />
+                    ))}
+                  </div>
           </>
       )}
     </div>
