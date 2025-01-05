@@ -177,7 +177,6 @@ export default function AdView() {
       </div>
 
 
-
       <div className="grid grid-cols-1 md:grid-cols-3 
       justify-center mb-10 gap-y-10 
       place-items-center 
