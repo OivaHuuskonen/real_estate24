@@ -9,13 +9,12 @@ export default function AdCard({ ad, className  }) {
   const cardClassName = `${className} relative z-10`; // Lisää 'relative z-10'
 
   return (
-  
     <div className={cardClassName}> 
       <Link to={`/ad/${ad.slug}`}>
         <Badge.Ribbon 
         text={`${ad?.type} for ${ad?.action}`} 
         color={badgeColor} 
-        style={{ fontFamily: 'floral', fontWeight: 'normal' }}
+       // style={{ fontFamily: 'floral', fontWeight: 'normal' }}
         className="text-sm md:text-base" 
         >
           <div className="card hoverable shadow-lg shadow-[#879c7d] rounded-md my-card pb-4 w-90 h-100"> {/* Määritellään kortin koko */}
@@ -26,7 +25,7 @@ export default function AdCard({ ad, className  }) {
               />
 
               <div className="card-body">
-              <h3 className="text-2xl pl-2 pt-6 pb-1 font-floral">{formatNumber(ad?.price)}€</h3>
+              <h3 className="text-2xl pl-2 pt-6 pb-1 ">{formatNumber(ad?.price)}€</h3>
               <p className="text-md text-[#879c7d] pl-2 pb-2">{ad?.address}</p>
 
               <AdFeatures ad={ad} layout="spread" />

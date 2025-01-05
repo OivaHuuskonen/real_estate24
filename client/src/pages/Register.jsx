@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Login.css'
+import styles from './Login.module.css';
 import axios from "axios";
 //import { API } from "../config";
 import toast from "react-hot-toast";
@@ -40,12 +40,11 @@ export default function Register() {
   };
 
   return (
-    <div className="center-content">
-    <div className="wrapper">
+     <div className={styles.centerContent}>
+    <div className={styles.wrapper}>
             <form onSubmit={handleSubmit}>
-            <br></br><br></br><br></br>
             <h1>Register</h1>
-            <div className="input-box">
+              <div className={styles.inputBox}>
               <input
                 type="text"
                 placeholder="Enter your email"
@@ -54,10 +53,9 @@ export default function Register() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <FaUser className="icon"/>
+              <FaUser className={styles.icon}/>
               </div>
-
-              <div className="input-box">
+              <div className={styles.inputBox}>
               <input
                 type="password"
                 placeholder="Choose your password"
@@ -66,25 +64,25 @@ export default function Register() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <FaLock className="icon"/>
+              <FaLock className={styles.icon}/>
               </div>
            
               <button      
               disabled={loading}
-              type="submit">
+              type="submit"
+              className={styles.button}
+              >
               {loading ? "Waiting..." : "Register"}
               </button>
-
-              <div className="register-link">
+              <div className={styles.registerLink}>
               <br></br>
               <p>already have an account?</p>
-
-              <Link className="text-gray-500" to="/login">
-                Go to Login
+              <Link className={styles.textGray500} to="/login">
+               Go to Login
               </Link>
               </div>
             </form>
-    </div>
+          </div>
     </div>
   );
 }

@@ -2,12 +2,22 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../../components/nav/Sidebar";
 
-const PageHeader = ({ title }) => (
+/*const PageHeader = ({ title }) => (
   <div className="mx-auto w-full text-align:left pb-16 pt-20 bg-[#51829B]">
-    <h1 className="font-floral pl-10 text-9xl sm:text-7xl text-[#F5F5F5]">
+    <h1 className="pl-10 text-9xl sm:text-7xl text-[#F5F5F5]">
       {title}
-      {/*<img src={leafyIcon} alt="Leafy Icon" className="h-12 w-12 ml-4" />*/}
     </h1>
+  </div>
+);*/
+
+const PageHeader = ({ title }) => (
+  <div className="w-full text-align:left pb-12 pt-14 xl:pb-16 xl:pt-20 bg-[#51829B]">
+    <div className="flex items-center pl-8">
+      <h1 className="text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
+        {title}
+      </h1>
+      {/*<img src={artNouveau} alt="Art Nouveau" className="h-[6em] w-auto ml-4 bg-[#51829B]" />*/}
+    </div>
   </div>
 );
 
