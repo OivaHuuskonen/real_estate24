@@ -4,19 +4,10 @@ import axios from "axios";
 import UserCard from "../components/cards/UserCard";
 import AdCard from "../components/cards/AdCard";
 
-
-/*const PageHeader = ({ title }) => (
-  <div className="mx-auto w-full text-left pb-16 pt-20 bg-[#51829B]">
-    <h1 className="pl-10 text-6xl sm:text-7xl font-bold text-[#FFFAFA]">
-      {title}
-    </h1>
-  </div>
-);*/
-
 const PageHeader = ({ title }) => (
   <div className="w-full text-align:left pb-12 pt-14 xl:pb-16 xl:pt-20 bg-[#51829B]">
     <div className="flex items-center pl-10">
-      <h1 className="font-floral text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
+      <h1 className="text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
         {title}
       </h1>
       {/*<img src={artNouveau} alt="Art Nouveau" className="h-[6em] w-auto ml-4 bg-[#51829B]" />*/}
@@ -25,7 +16,6 @@ const PageHeader = ({ title }) => (
 );
 
 export default function Agent() {
-  // state
   const [agent, setAgent] = useState(null);
   const [ads, setAds] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -92,9 +82,6 @@ export default function Agent() {
             <AdCard 
               ad={ad} 
               key={ad._id} 
-              /*className={index % 3 === 0 ? 'justify-self-end' :
-                         index % 3 === 1 ? '' :
-                         'justify-self-start'}*/
               />
           ))}
         </div>

@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import { useAuth } from "../../context/auth";
 import { useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -40,6 +41,22 @@ export default function Main() {
     setUserDropdown(!userDropdown);
   };
 
+  const userDropdownRef = useRef(null);
+
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (userDropdownRef.current && !userDropdownRef.current.contains(event.target)) {
+      setUserDropdown(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
+
+
   return (
     <div className='bg-[#F5F5F5] w-full px-4 py-2 pb-6'>
       <div className="hidden md:flex justify-between">
@@ -56,19 +73,36 @@ export default function Main() {
             <NavLink className="nav-link text-black" to="/register">Register</NavLink>
           </>
         ) : (
-          <div className="relative">
-            <button className="nav-link text-black dropdown-toggle" onClick={toggleUserDropdown}>
+          <div className="relative" ref={userDropdownRef}>
+            <button 
+            className="nav-link text-black dropdown-toggle" 
+            onClick={toggleUserDropdown}>
               {auth?.user?.name ? auth.user.name : auth.user.username}
             </button>
             {userDropdown && ( // Käyttäen userDropdown tilaa
-              <ul className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg">
+                <ul className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg">
                 <li>
-                  <NavLink className="block px-4 py-2 text-black hover:bg-gray-100" to="/dashboard">Dashboard</NavLink>
+                  <NavLink
+                    className="block px-4 py-2 text-black hover:bg-gray-100"
+                    to="/dashboard"
+                    onClick={() => setUserDropdown(false)} // Sulkee valikon klikkauksen jälkeen
+                  >
+                    Dashboard
+                  </NavLink>
                 </li>
                 <li>
-                  <a onClick={logout} className="block px-4 py-2 text-black hover:bg-gray-100">Logout</a>
+                  <a
+                    onClick={() => {
+                      logout();
+                      setUserDropdown(false); // Sulkee valikon klikkauksen jälkeen
+                    }}
+                    className="block px-4 py-2 text-black hover:bg-gray-100"
+                  >
+                    Logout
+                  </a>
                 </li>
               </ul>
+
             )}
           </div>
         )}
@@ -124,4 +158,11 @@ export default function Main() {
   );
 }
 
-
+{/*  <ul className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg">
+                <li>
+                  <NavLink className="block px-4 py-2 text-black hover:bg-gray-100" to="/dashboard">Dashboard</NavLink>
+                </li>
+                <li>
+                  <a onClick={logout} className="block px-4 py-2 text-black hover:bg-gray-100">Logout</a>
+                </li>
+              </ul>*/}

@@ -23,11 +23,9 @@ export default function AdCard({ ad, className  }) {
               alt={`${ad?.type}-${ad?.address}-${ad?.action}-${ad?.price}`}
               className="w-full h-60 object-cover rounded-t-md" // Määritellään kuvan koko ja sovitus
               />
-
               <div className="card-body">
               <h3 className="text-2xl pl-2 pt-6 pb-1 ">{formatNumber(ad?.price)}€</h3>
               <p className="text-md text-[#879c7d] pl-2 pb-2">{ad?.address}</p>
-
               <AdFeatures ad={ad} layout="spread" />
             </div>
           </div>

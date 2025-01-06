@@ -37,12 +37,11 @@ export default function Home() {
 
   return (
     <div name='home' className='max-w-screen w-full pb-10'>
-     
         <div className="flex justify-center py-6 mx-auto">
         <SearchMain />
         </div>
         <div name="header" className="w-full">
-        <PageHeader title="For Sell"/>
+        <PageHeader title="REAL ESTATE MARKETPLACE"/>
         </div>
   
         <div className="grid grid-cols-1 

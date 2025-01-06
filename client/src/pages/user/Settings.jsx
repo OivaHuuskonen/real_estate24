@@ -3,6 +3,17 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import Sidebar from "../../components/nav/Sidebar";
 
+const PageHeader = ({ title }) => (
+  <div className="w-full text-align:left pb-12 pt-14 xl:pb-16 xl:pt-20 bg-[#51829B]">
+    <div className="flex items-center pl-8">
+      <h1 className="text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
+        {title}
+      </h1>
+      {/*<img src={artNouveau} alt="Art Nouveau" className="h-[6em] w-auto ml-4 bg-[#51829B]" />*/}
+    </div>
+  </div>
+);
+
 export default function Settings() {
   // state
   const [password, setPassword] = useState("");
@@ -29,9 +40,14 @@ export default function Settings() {
   };
 
   return (
-    <>
-      <h1 className="display-1 bg-primary text-light p-5">Settings</h1>
-      <div className="container-fluid">
+    
+    <div name='settings' className='max-w-screen w-full pb-10'>
+        <div className="flex justify-center py-6 mx-auto">
+        <SearchMain />
+        </div>
+        <div name="header" className="w-full">
+        <PageHeader title="For Sell"/>
+        </div>
         <Sidebar />
         <br></br> <br></br> <br></br>
         <div className="container mt-2">
@@ -57,6 +73,6 @@ export default function Settings() {
           </div>
         </div>
       </div>
-    </>
+    
   );
 }
