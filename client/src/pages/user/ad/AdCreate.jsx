@@ -40,7 +40,7 @@ export default function AdCreate() {
   return (
     <div name='home' className='w-full pb-10'>
       <div name="header">
-        <PageHeader title="Ad Create"/>
+        <PageHeader title="Create post"/>
       </div>
       <Sidebar />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-20">
@@ -48,7 +48,7 @@ export default function AdCreate() {
         <div className="flex flex-col items-center">
           <button
             onClick={handleSell}
-            className="py-2.5 px-10 me-2 mb-2 font-floral text-sm font-medium
+            className="py-2.5 px-10 me-2 mb-2 text-sm font-medium
             text-gray-900 focus:outline-none bg-white 
             rounded-lg border border-gray-200 hover:bg-gray-100
             hover:text-[#51829B] focus:z-10 focus:ring-4

@@ -79,14 +79,14 @@ export default function AdForm({ action, type }) {
         />
       </div>
 
-      <div style={{ marginTop: "80px" }}>
+
         <CurrencyInput
           placeholder="Enter price"
           defaultValue={ad.price}
           className="form-control mb-3"
           onValueChange={(value) => setAd({ ...ad, price: value })}
         />
-      </div>
+      
 
       {type === "House" ? (
         <>
@@ -146,11 +146,12 @@ export default function AdForm({ action, type }) {
 
       <button
         onClick={handleClick}
-        className={`btn btn-primary mb-5 ${ad.loading ? "disabled" : ""}`}
+        className={`bg-[#cbc385] hover:bg-[#cf8c60] text-[#879c7d] py-2 px-4 rounded mb-5 ${
+          ad.loading ? "cursor-not-allowed opacity-50" : ""
+        }`}
       >
         {ad.loading ? "Saving..." : "Submit"}
       </button>
-
       {/* <pre>{JSON.stringify(ad, null, 4)}</pre> */}
     </>
   );

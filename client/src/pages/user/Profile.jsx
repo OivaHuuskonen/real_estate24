@@ -14,7 +14,6 @@ const PageHeader = ({ title }) => (
       <h1 className="text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
         {title}
       </h1>
-      {/*<img src={artNouveau} alt="Art Nouveau" className="h-[6em] w-auto ml-4 bg-[#51829B]" />*/}
     </div>
   </div>
 );
@@ -82,13 +81,12 @@ export default function Profile() {
     <>
 
 <div name="header">
-        <PageHeader title="Ad Create"/>
+        <PageHeader title="Your profile"/>
       </div>
-      {/*<h1 className="bg-primary text-light p-5">Profile</h1>*/}
       <div className="container-fluid">
         <Sidebar />
         <div className="container mt-2">
-          <div className="row">
+          <div className="row w-full">
             <div className="col-lg-8 offset-lg-2 mt-2">
               <ProfileUpload
                 photo={photo}
@@ -96,61 +94,108 @@ export default function Profile() {
                 uploading={uploading}
                 setUploading={setUploading}
               />
-
               <form onSubmit={handleSubmit}>
+              <div className="mb-4">
+              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+                  Username
+                </label>
                 <input
+                id="username"
                   type="text"
                   placeholder="Update your username"
-                  className="form-control mb-4"
+                  className="form-control"
                   value={username}
                   onChange={(e) =>
                     setUsername(slugify(e.target.value.toLowerCase()))
                   }
                 />
+                </div>
+                <div className="mb-4">
+              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+                  name
+                </label>
                 <input
+                 id="name"
                   type="text"
                   placeholder="Enter your name"
                   className="form-control mb-4"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
+                </div>
+                 <div className="mb-4">
+              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+                  email
+                </label>
                 <input
+                 id="email"
                   type="email"
                   className="form-control mb-4"
                   value={email}
                   disabled={true}
                 />
+                </div>
+                 <div className="mb-4">
+              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+                  Company name
+                </label>
                 <input
+                  id="company"
                   type="text"
                   placeholder="Enter your company name"
                   className="form-control mb-4"
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
                 />
+                </div>
+                 <div className="mb-4">
+              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+                  address
+                </label>
                 <input
+                  id="address"
                   type="text"
                   placeholder="Enter your address"
                   className="form-control mb-4"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                 />
+                </div>
+                 <div className="mb-4">
+              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+                  phone number
+                </label>
                 <input
+                  id="phone"
                   type="text"
                   placeholder="Enter your phone"
                   className="form-control mb-4"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
+                </div>
+                 <div className="mb-4">
+              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+                  something about yourself
+                </label>
                 <textarea
+                  id="about"
                   placeholder="Write something interesting about yourself.."
                   className="form-control mb-4"
                   value={about}
                   onChange={(e) => setAbout(e.target.value)}
                   maxLength={200}
                 />
+                </div>
+
+                {/*<button
+                  className="btn btn-primary col-12 mb-4 rounded-2"
+                >
+                  {loading ? "Processing" : "Update profile"}
+                </button>*/}
+
                 <button
-                  className="btn btn-primary col-12 mb-4"
-                  disabled={loading}
+                  className="bg-[#cbc385] hover:bg-[#cf8c60] text-[#879c7d] py-2 px-4 rounded col-12"
                 >
                   {loading ? "Processing" : "Update profile"}
                 </button>
