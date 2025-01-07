@@ -2,14 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../../components/nav/Sidebar";
 
-/*const PageHeader = ({ title }) => (
-  <div className="mx-auto w-full text-align:left pb-16 pt-20 bg-[#51829B]">
-    <h1 className="pl-10 text-9xl sm:text-7xl text-[#F5F5F5]">
-      {title}
-    </h1>
-  </div>
-);*/
-
 const PageHeader = ({ title }) => (
   <div className="w-full text-align:left pb-12 pt-14 xl:pb-16 xl:pt-20 bg-[#51829B]">
     <div className="flex items-center pl-8">
@@ -94,7 +86,7 @@ export default function AdCreate() {
         <div className="flex flex-col items-center">
           <button
             onClick={handleRent}
-            className="py-2.5 px-10 me-2 mb-2 text-sm font-floral font-medium
+            className="py-2.5 px-10 me-2 mb-2 text-sm font-medium
             text-gray-900 focus:outline-none bg-white 
             rounded-lg border border-gray-200 hover:bg-gray-100
             hover:text-[#51829B] focus:z-10 focus:ring-4

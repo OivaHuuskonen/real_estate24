@@ -7,7 +7,7 @@ import SearchMain from "../components/forms/SearchMain";
 
 const PageHeader = ({ title }) => (
   <div className="mx-auto w-full text-align:left pb-16 pt-20 bg-[#51829B]">
-    <h1 className="pl-10 text-6xl sm:text-7xl font-bold text-[#F5F5F5]">
+    <h1 className="pl-10 text-6xl sm:text-7xl text-[#F5F5F5]">
       {title}
     </h1>
   </div>
@@ -34,9 +34,9 @@ export default function Buy() {
 
   return (
     <div className='w-full pb-10'>
-      <div className="flex justify-center py-10 mx-auto">
+      <div className="flex justify-center py-6 mx-auto">
       <SearchMain />
-    </div>
+      </div>
       <div name="buy">
       <PageHeader title="For Sell"/>
       </div>

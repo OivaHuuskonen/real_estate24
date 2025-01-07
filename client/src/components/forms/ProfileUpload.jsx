@@ -66,10 +66,28 @@ export default function ProfileUpload({
 
   return (
     <div className="flex items-center space-x-4 mt-4">
+      {photo?.Location && (
+        <>
+          <Avatar
+            src={photo.Location}
+            shape="square"
+            style={{ width: "120px", height: "120px" }}
+            className="border-2 border-[#cbc385]"
+          />
+
+          <button
+            onClick={handleDelete}
+            className="bg-[#FFFAFA] hover:bg-[#cbc385] border-2 border-[#cbc385] text-[#879c7d] px-4 py-4 rounded"
+          >
+            Delete Photo
+          </button>
+        </>
+      )}
+
       <label
         className={`${
-          uploading ? "bg-gray-300" : "bg-[#cbc385] hover:bg-[#cf8c60]"
-        } text-[#879c7d] py-2 px-4 rounded cursor-pointer`}
+          uploading ? "bg-[#FFFAFA]" : "bg-[#FFFAFA] hover:bg-[#cbc385] text-[#879c7d] border-2 border-[#cbc385] px-4 py-4 rounded"
+        } text-[#879c7d] px-4 rounded cursor-pointer`}
       >
         {uploading ? "Processing..." : "Upload Photo"}
         <input
@@ -79,23 +97,6 @@ export default function ProfileUpload({
           hidden
         />
       </label>
-
-      {photo?.Location && (
-        <>
-          <Avatar
-            src={photo.Location}
-            shape="square"
-            style={{ width: "120px", height: "120px" }}
-            className="border-2 border-gray-300"
-          />
-          <button
-            onClick={handleDelete}
-            className="bg-red-500 hover:bg-red-600 text-[#879c7d] py-2 px-4 rounded"
-          >
-            Delete Photo
-          </button>
-        </>
-      )}
     </div>
   );
 }

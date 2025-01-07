@@ -62,7 +62,7 @@ export default function Dashboard() {
         <div className="flex justify-center py-10">
           <h1> {`Total ${total} ads found`} </h1>
           </div>
-          <div className="grid grid-cols-1 
+          {/*<div className="grid grid-cols-1 
           md:grid-cols-3 
           justify-center 
           mb-10 gap-y-10 
@@ -77,18 +77,34 @@ export default function Dashboard() {
                 'justify-self-start'}
               />
             ))}
-          </div>
+          </div>*/}
 
-          {ads?.length < total && (
-            <div className="flex justify-center mt-4 mb-4">
-              <button
-                disabled={loading}
-                className="bg-[#cbc385] hover:bg-[#cf8c60] text-[#879c7d]  py-2 px-4 rounded"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setPage(page + 1);
-                }}
-              >
+            <div className="grid grid-cols-1 
+                  sm:grid-cols-1 
+                  md:grid-cols-2 
+                  xl:grid-cols-3   
+                  justify-center mb-10 gap-y-10 
+                  place-items-center 
+                  px-4 sm:px-8 
+                  py-10 bg-[#FFFAFA]">
+                    {ads?.map((ad) => (
+                      <UserAdCard 
+                      ad={ad} 
+                      key={ad._id} 
+                      />
+                    ))}
+                  </div>
+
+                  {ads?.length < total && (
+                    <div className="flex justify-center mt-4 mb-4">
+                      <button
+                        disabled={loading}
+                        className="bg-[#cbc385] hover:bg-[#cf8c60] text-[#879c7d]  py-2 px-4 rounded"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setPage(page + 1);
+                        }}
+                      >
                 {loading ? "Loading..." : `${ads?.length} / ${total} Load more`}
               </button>
             </div>

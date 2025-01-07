@@ -107,7 +107,7 @@ export default function ContactSeller({ ad }) {
 
           {loggedIn ? (
             <button
-              className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+              className="bg-[#cbc385] hover:bg-[#cf8c60] text-[#879c7d]  py-2 px-4 rounded w-full"
               type="submit"
               disabled={!name || !email || loading}
             >
@@ -115,14 +115,14 @@ export default function ContactSeller({ ad }) {
             </button>
           ) : (
             <button
-              className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300"
+              className="bg-[#cbc385] hover:bg-[#cf8c60] text-[#879c7d]  py-2 px-4 rounded w-full"
               type="button"
               onClick={handleLoginRedirect}
-              style={{ 
+              /*style={{ 
                 border: "2px solid #F6995C !important", 
                 borderRadius: "40px !important", // Korjattu radius -> borderRadius
                 cursor: "pointer !important",
-              }}
+              }}*/
             >
               Login to send enquiry
             </button>
