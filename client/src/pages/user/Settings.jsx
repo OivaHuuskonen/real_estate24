@@ -40,19 +40,15 @@ export default function Settings() {
   };
 
   return (
-    
-    <div name='settings' className='max-w-screen w-full pb-10'>
-        <div className="flex justify-center py-6 mx-auto">
-        <SearchMain />
-        </div>
-        <div name="header" className="w-full">
-        <PageHeader title="For Sell"/>
+    <>
+    <div name='settings'> 
+        <PageHeader title="Update password"/>
         </div>
         <Sidebar />
-        <br></br> <br></br> <br></br>
         <div className="container mt-2">
-          <div className="row">
-            <div className="col-lg-8 offset-lg-2 mt-20">
+          <br></br> <br></br>
+          <div className="row w-full">
+            <div className="col-lg-8 offset-lg-2 mt-2">
               <form onSubmit={handleSubmit}>
                 <input
                   type="password"
@@ -61,9 +57,8 @@ export default function Settings() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-
                 <button
-                  className="btn btn-primary col-12 mb-4"
+                  className="bg-[#cbc385] hover:bg-[#cf8c60] text-[#879c7d] py-2 px-4 rounded col-12"
                   disabled={loading}
                 >
                   {loading ? "Processing" : "Update password"}
@@ -71,8 +66,7 @@ export default function Settings() {
               </form>
             </div>
           </div>
-        </div>
       </div>
-    
+    </>
   );
 }

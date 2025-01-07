@@ -11,6 +11,7 @@ export default function Main() {
   const [userDropdown, setUserDropdown] = useState(false); // Uusi tila käyttäjän alasvetovalikolle
   const navigate = useNavigate();
   
+
   const logout = () => {
     setAuth({ user: null, token: "", refreshToken: "" });
     localStorage.removeItem("auth");
