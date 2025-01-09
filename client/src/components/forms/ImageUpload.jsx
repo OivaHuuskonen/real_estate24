@@ -281,7 +281,40 @@ export default function ImageUpload({ ad, setAd }) {
   };
 
   return (
-    <>
+<div className="flex items-center space-x-4 mt-4">
+<div className="flex mb-0">
+  {ad.photos?.map((file, index) => (
+    <Avatar
+      key={index}
+      src={file?.Location}
+      shape="square"
+      style={{ width: "120px", height: "120px" }}
+            className="border-2 border-[#cbc385]"
+     // size="46"
+      onClick={() => handleDelete(file)}
+    />
+  ))}
+</div>
+  <label className={`bg-[#FFFAFA] hover:bg-[#cbc385] 
+    border-2 border-[#cbc385] text-[#879c7d] px-4 py-4 
+    rounded cursor-pointer`}>
+    {ad.uploading ? "Processing..." : "Upload photos"}
+    <input
+      onChange={handleUpload}
+      type="file"
+      accept="image/*"
+      multiple
+      hidden
+    />
+  </label>
+</div>
+
+    );
+  }
+
+
+
+    {/*<>
       <label className="btn btn-secondary mb-4">
         {ad.uploading ? "Processing..." : "Upload photos"}
         <input
@@ -302,6 +335,4 @@ export default function ImageUpload({ ad, setAd }) {
           onClick={() => handleDelete(file)}
         />
       ))}
-    </>
-  );
-}
+    </>*/}

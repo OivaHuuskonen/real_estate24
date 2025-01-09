@@ -107,10 +107,10 @@ export default function AdEdit({ action, type }) {
       <div className="container-fluid">
         <Sidebar />
         <div className="row">
-          
           <div className="col-lg-8 offset-lg-2">
           <br></br><br></br>
             <ImageUpload ad={ad} setAd={setAd} />
+            <br></br>
             {loaded && (
               <GooglePlacesAutocomplete
                 apiKey={import.meta.env.VITE_GOOGLE_PLACES_KEY}
@@ -125,16 +125,26 @@ export default function AdEdit({ action, type }) {
               />
             )}
             {loaded && (
+              <div className="mb-4">
+              <label htmlFor="price" className="block text-[#879c7d] mb-2">
+                Price
+              </label>
               <CurrencyInput
+                type="text"
                 id="price"
                 placeholder="Enter price"
                 defaultValue={ad.price}
                 className="form-control mb-3"
                 onValueChange={(value) => setAd({ ...ad, price: value })}
               />
+              </div>
             )}
             {ad.type === "House" && (
               <>
+               <div className="mb-4">
+                <label htmlFor="bedrooms" className="block text-[#879c7d] mb-2">
+                  bedrooms
+                </label>
                 <input
                   type="number"
                   min="0"
@@ -143,6 +153,11 @@ export default function AdEdit({ action, type }) {
                   value={ad.bedrooms}
                   onChange={(e) => setAd({ ...ad, bedrooms: e.target.value })}
                 />
+                </div>
+                <div className="mb-4">
+                <label htmlFor="bathrooms" className="block text-[#879c7d] mb-2">
+                  bathrooms
+                </label>
                 <input
                   type="number"
                   min="0"
@@ -151,6 +166,11 @@ export default function AdEdit({ action, type }) {
                   value={ad.bathrooms}
                   onChange={(e) => setAd({ ...ad, bathrooms: e.target.value })}
                 />
+                </div>
+                <div className="mb-4">
+                <label htmlFor="carpark" className="block text-[#879c7d] mb-2">
+                  carpark
+                </label>
                 <input
                   type="number"
                   min="0"
@@ -159,8 +179,13 @@ export default function AdEdit({ action, type }) {
                   value={ad.carpark}
                   onChange={(e) => setAd({ ...ad, carpark: e.target.value })}
                 />
+                </div>
               </>
             )}
+            <div className="mb-4">
+              <label htmlFor="landsize" className="block text-[#879c7d] mb-2">
+                  landsize
+                </label>
             <input
               type="text"
               className="form-control mb-3"
@@ -168,6 +193,11 @@ export default function AdEdit({ action, type }) {
               value={ad.landsize}
               onChange={(e) => setAd({ ...ad, landsize: e.target.value })}
             />
+            </div>
+            <div className="mb-4">
+            <label htmlFor="title" className="block text-[#879c7d] mb-2">
+              Title
+            </label>
             <input
               type="text"
               className="form-control mb-3"
@@ -175,12 +205,18 @@ export default function AdEdit({ action, type }) {
               value={ad.title}
               onChange={(e) => setAd({ ...ad, title: e.target.value })}
             />
+            </div>
+            <div className="mb-4">
+            <label htmlFor="description" className="block text-[#879c7d] mb-2">
+              Description
+            </label>            
             <textarea
               className="form-control mb-3"
               placeholder="Enter description"
               value={ad.description}
               onChange={(e) => setAd({ ...ad, description: e.target.value })}
             />
+            </div>
             <div className="d-grid gap-2">
               <button
                 onClick={handleClick}

@@ -17,6 +17,12 @@
     background: transparent !important; /* Poistaa taustan */
     border: none !important; /* Poistaa mahdolliset reunukset */
     padding: 30px 30px 50px 40px !important;
+    transition: none; /* Poistaa hover-tilan */
+  }
+
+  .image-gallery-icon:hover {
+    background: transparent !important; /* Poistaa taustan */
+    border: none !important; /* Poistaa mahdolliset reunukset */
   }
   
   /* Responsiivinen suunnittelu */
@@ -37,7 +43,8 @@
     stroke: #cbc385; /* Korvaa #desiredColor haluamallasi värillä */
   }
 
-  .image-gallery-left-nav, .image-gallery-right-nav { 
+  .image-gallery-left-nav, 
+  .image-gallery-right-nav { 
     width: 60px; /* Aseta haluamasi leveys */ 
     height: 60px; /* Aseta haluamasi korkeus */ 
     padding: 30px; /* Lisää tämä asettaaksesi haluamasi padding-arvo */ 

@@ -77,7 +77,8 @@ export default function ProfileUpload({
 
           <button
             onClick={handleDelete}
-            className="bg-[#FFFAFA] hover:bg-[#cbc385] border-2 border-[#cbc385] text-[#879c7d] px-4 py-4 rounded"
+            className="bg-[#FFFAFA] hover:bg-[#cbc385] 
+            border-2 border-[#cbc385] text-[#879c7d] px-4 py-4 rounded"
           >
             Delete Photo
           </button>
