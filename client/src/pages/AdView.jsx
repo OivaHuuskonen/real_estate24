@@ -24,7 +24,8 @@ export default function AdView() {
     const fetchAd = async () => {
       try {
         const { data } = await axios.get(`/ad/${params?.slug}`);
-        console.log('ad-objekti:', data.ad); // Tarkastellaan ad-objektin sisältöä
+        //console.log('ad-objekti:', data.ad); // Tarkastellaan ad-objektin sisältöä
+       // console.log('ad.postedBy:', data.ad.postedBy);
         setAd(data?.ad || {});
         setRelated(data?.related || []);
       } catch (err) {
@@ -68,7 +69,7 @@ export default function AdView() {
     <>
 
 
-<div className="flex flex-col sm:grid sm:grid-cols-3 gap-4 pt-10 pb-10"> 
+<div className="flex flex-col sm:grid sm:grid-cols-3 gap-4 pt-10"> 
 <div className="flex flex-row sm:col-span-3 justify-between items-center">
 <div className="pl-4">{ad?.sold ? "❌ Off market" : "✅ In market"}</div> 
 <LikeUnlike ad={ad} className="relative right-4 sm:right-0" /> </div>
@@ -166,9 +167,7 @@ export default function AdView() {
 
       <div className="container mb-2">
         <div className="row">
-          <div className="col-lg-8 offset-lg-2 mt-3">
-            <br />
-            <br />
+          <div className="col-lg-8 offset-lg-2">
             <h3 className="text-xl pl-6">
               Other related properties by {ad?.postedBy?.name}:
             </h3>

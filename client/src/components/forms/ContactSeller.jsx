@@ -3,7 +3,7 @@ import { useAuth } from "../../context/auth";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
-
+import { MdEmail } from "react-icons/md";
 export default function ContactSeller({ ad }) {
   // context
   const [auth, setAuth] = useAuth();
@@ -64,8 +64,9 @@ export default function ContactSeller({ ad }) {
     <div className="flex justify-center items-center min-h-screen">
       <div className="w-full max-w-xl bg-white p-6 rounded-lg shadow-md">
         <h3 className="text-2xl font-semibold text-center mb-6">
-          Please contact {ad?.postedBy?.name ? ad?.postedBy?.name : ad?.postedBy?.username}
-        </h3>
+  Please contact {ad?.postedBy?.name ? ad?.postedBy?.name : ad?.postedBy?.username}
+  <MdEmail style={{ fontSize: 28, color: '#cbc385', display: 'inline-block', verticalAlign: 'middle' }} />
+</h3>
         <form onSubmit={handleSubmit} className="space-y-4">
           <textarea
             name="message"

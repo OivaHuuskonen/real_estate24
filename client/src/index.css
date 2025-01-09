@@ -1,23 +1,42 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cactus+Classical+Serif&family=Cinzel:wght@400..900&family=Gwendolyn:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bellota:ital,
+  wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Cactus+Classical+Serif&family=Cinzel:wght@400..900&family=Gwendolyn:wght@400;
+  700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');*/
 /*@font-face {
   font-family: 'FloralCapsNouveau';
   src: local('FloralCapsNouveau'), url(./fonts/Floralcapsnouveau-MZGn.ttf) format('truetype');
+}
+
+
+.tsukimi-rounded-regular {
+  font-family: "Tsukimi Rounded", serif;
+  font-weight: 400;
+  font-style: normal;
 }*/
+
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
 
-  /*background-image: url('./assets/lataus4.jpeg');*/
+@font-face {
+   font-family: 'Comfortaa';
+   font-style: normal;
+   font-weight: 400;
+   src: url('./fonts/Comfortaa-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
   background-color: #F5F5F5;
-  /*font-family: 'floral', serif;*/
-  font-family: 'Cinzel', serif;
 }
 
  /*font-family: 'FloralCapsNouveau';
-  src: local('FloralCapsNouveau'), url(./fonts/FloralCapsNouveau.ttf) format('truetype');*/
+  src: local('FloralCapsNouveau'), url(./fonts/FloralCapsNouveau.ttf) format('truetype');
+   /*background-image: url('./assets/lataus4.jpeg');*/
+    /*font-family: 'floral', serif;*/
+  /*font-family: 'Cinzel', serif;*/
+  
 
 /* Lisää nämä tyylit  @apply font-cinzel;*/
 .flex-grow {
