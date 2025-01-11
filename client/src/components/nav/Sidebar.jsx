@@ -26,22 +26,23 @@ export default function Sidebart() {
   return (
     <div className='bg-[#F5F5F5] w-full px-2 py-2 pb-1'>
       <div className="hidden md:flex justify-start gap-6">
-      <NavLink className="nav-link text-black" to="/dashboard">Dashboard</NavLink>
-        <NavLink className="nav-link text-black" to="/user/wishlist">Wishlist</NavLink>
-        <NavLink className="nav-link text-black" to="/user/Enquiries">Enquiries</NavLink>
-        <NavLink className="nav-link text-black" to="/ad/create">Create</NavLink>
-        <NavLink className="nav-link text-black" to="/user/profile">Profile</NavLink>
-        <NavLink className="nav-link text-black" to="/user/settings">Update password</NavLink>
+      <NavLink className="font-floral nav-link text-black" to="/dashboard">Dashboard</NavLink>
+        <NavLink className="nav-link text-black font-floral !important" to="/user/wishlist">Wishlist</NavLink>
+        <NavLink className="nav-link text-black font-floral !font-floral" to="/user/Enquiries">Enquiries</NavLink>
+        <NavLink className="nav-link text-black font-floral !font-floral" to="/ad/create">Create</NavLink>
+        <NavLink className="nav-link text-black font-floral !font-floral" to="/user/profile">Profile</NavLink>
+        <NavLink className="nav-link text-black font-floral !font-floral" to="/user/settings">Update password</NavLink>
       </div>
       <br></br>
       <div className='md:hidden z-20 flex items-center'>
-        <LuLayoutDashboard onClick={handleClick} style={{ width: '1.5rem', height: '1.5rem', marginRight: '0.5rem', color: '[#51829B]' }} />
+        <LuLayoutDashboard onClick={handleClick} 
+        style={{ width: '1.5rem', height: '1.5rem', marginRight: '0.5rem', color: '[#51829B]' }} />
         <span onClick={handleClick} className='cursor-pointer'>Dashboard navigation</span>
       </div>
       {/* Mobiilivalikko */}
       {nav && (
               <div className='fixed top-0 right-0 w-[60%] max-w-md h-screen bg-[rgba(253, 235, 211, 0.8)] backdrop-filter backdrop-blur-md flex flex-col justify-center items-center z-50'>
-              <ul className='text-[#679186]'>
+              <ul className='font-floral text-[#679186]'>
                 <li className='py-6 text-4xl'>
                   <NavLink className="nav-link text-black" to="/dashboard" onClick={handleClick}>Dashboard</NavLink>
                 </li>

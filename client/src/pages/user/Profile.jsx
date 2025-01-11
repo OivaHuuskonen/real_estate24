@@ -11,7 +11,7 @@ import ProfileUpload from "../../components/forms/ProfileUpload";
 const PageHeader = ({ title }) => (
   <div className="w-full text-align:left pb-12 pt-14 xl:pb-16 xl:pt-20 bg-[#51829B]">
     <div className="flex items-center pl-6">
-      <h1 className="text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
+      <h1 className="font-floral text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
         {title}
       </h1>
     </div>
@@ -96,7 +96,7 @@ export default function Profile() {
               <br></br>
               <form onSubmit={handleSubmit}>
               <div className="mb-4">
-              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+              <label htmlFor="username" className="font-floral block text-[#879c7d] mb-2">
                   Username
                 </label>
                 <input
@@ -111,7 +111,7 @@ export default function Profile() {
                 />
                 </div>
                 <div className="mb-4">
-              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+              <label htmlFor="username" className="font-floral block text-[#879c7d] mb-2">
                   name
                 </label>
                 <input
@@ -124,7 +124,7 @@ export default function Profile() {
                 />
                 </div>
                  <div className="mb-4">
-              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+              <label htmlFor="username" className="font-floral block text-[#879c7d] mb-2">
                   email
                 </label>
                 <input
@@ -136,7 +136,7 @@ export default function Profile() {
                 />
                 </div>
                  <div className="mb-4">
-              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+              <label htmlFor="username" className="font-floral block text-[#879c7d] mb-2">
                   Company name
                 </label>
                 <input

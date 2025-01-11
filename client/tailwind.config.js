@@ -9,9 +9,7 @@ module.exports = {
       fontFamily: {
         //"tsukimi": ['"Tsukimi Rounded"', 'serif'],
        // 'cinzel': ['"Cinzel"', 'serif'],
-        //'floral': ['"FloralCapsNouveau"', 'serif'],
-        'comfortaa': ['"Comfortaa"', 'serif'],
-        
+        'floral': ['"FloralCapsNouveau"', 'serif'],        
       },
       colors: {
         'custom-beige': '#cbc385',

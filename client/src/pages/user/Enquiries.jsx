@@ -44,7 +44,7 @@ export default function Enquiries() {
 
       {!ads?.length ? (
         <div className="flex justify-center items-center text-center">
-          <h2 className="flex justify-center py-10">
+          <h2 className="flex justify-center py-10 font-floral">
             Hey {auth.user?.name ? auth.user?.name : auth.user?.username},
             <br></br>
             You have not enquired any properties yet!
@@ -53,7 +53,7 @@ export default function Enquiries() {
       ) : (
         <>
           <div className="flex flex-col items-center">
-            <h1 className="flex justify-center py-10">
+            <h1 className="font-floral flex justify-center py-10">
               You have enquired 
                       <FcLikePlaceholder className="text-3xl"/>
               {ads?.length}  properties</h1>
