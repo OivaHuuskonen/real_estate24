@@ -16,11 +16,11 @@ export default function Search() {
       <div name="seacrh">
         <div className="row">
           {search.results?.length > 0 ? (
-            <div className="col-md-12 text-center p-5">
-              Found {search.results?.length} results
+            <div className="col-md-12 font-floral text-center p-5">
+              found {search.results?.length} results
             </div>
           ) : (
-            <div className="col-md-12 text-center p-5">No properties found yet</div>
+            <div className="col-md-12 text-center font-floral p-5">no properties found yet</div>
           )}
         </div>
 

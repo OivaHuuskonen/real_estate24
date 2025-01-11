@@ -60,18 +60,18 @@ useEffect(() => {
 
   return (
     <div className='bg-[#F5F5F5] w-full px-4 py-2 pb-6'>
-      <div className="hidden md:flex justify-between">
+      <div className="font-floral hidden md:flex justify-between">
         {/* Linkit  #F5F5F5  */}
-        <NavLink className="nav-link text-black" to="/">Home</NavLink>
-        <NavLink className="nav-link text-black" to="/search">Search</NavLink>
-        <NavLink className="nav-link text-black" to="/buy">Buy</NavLink>
-        <NavLink className="nav-link text-black" to="/rent">Rent</NavLink>
-        <NavLink className="nav-link text-black" to="/agents">Agents</NavLink>
-        <a className="nav-link text-black pointer" onClick={handlePostAdClick}>Post Ad</a>
+        <NavLink className="nav-link text-black" to="/">home</NavLink>
+        <NavLink className="nav-link text-black" to="/search">search</NavLink>
+        <NavLink className="nav-link text-black" to="/buy">buy</NavLink>
+        <NavLink className="nav-link text-black" to="/rent">rent</NavLink>
+        <NavLink className="nav-link text-black" to="/agents">agents</NavLink>
+        <a className="nav-link text-black pointer" onClick={handlePostAdClick}>post ad</a>
         {!loggedIn ? (
           <>
-            <NavLink className="nav-link text-black" to="/login">Login</NavLink>
-            <NavLink className="nav-link text-black" to="/register">Register</NavLink>
+            <NavLink className="nav-link text-black" to="/login">login</NavLink>
+            <NavLink className="nav-link text-black" to="/register">register</NavLink>
           </>
         ) : (
           <div className="relative" ref={userDropdownRef}>
@@ -114,7 +114,7 @@ useEffect(() => {
       {/* Mobiilivalikko */}
       {nav && (
         <div className='fixed top-0 right-0 w-[60%] max-w-md h-screen bg-[rgba(253, 235, 211, 0.8)] backdrop-filter backdrop-blur-md flex flex-col justify-center items-center z-50'>
-          <ul className='text-[#679186]'>
+          <ul className='font-floral text-[#679186]'>
             <li className='py-6 text-4xl'>
               <NavLink className="nav-link text-black" to="/" onClick={handleClick}>Home</NavLink>
             </li>

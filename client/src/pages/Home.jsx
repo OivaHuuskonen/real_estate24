@@ -19,7 +19,7 @@ import SearchMain from "../components/forms/SearchMain";
 
 const PageHeader = ({ title }) => (
   <div className="mx-auto w-full text-align:left pb-16 pt-20 bg-[#51829B]">
-    <h1 className="font-Comfortaa pl-8 text-4xl sm:text-7xl text-[#F5F5F5]">
+    <h1 className="font-floral pl-8 text-5xl sm:text-7xl text-[#F5F5F5]">
       {title}
     </h1>
   </div>
@@ -66,7 +66,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div nREAL ESTATE MARKETPLACEame="header" className="w-full">
+        <div name="header" className="w-full">
         <PageHeader title="For Rent"/>
         </div>
    

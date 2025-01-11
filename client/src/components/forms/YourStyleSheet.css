@@ -1,13 +1,28 @@
+.full-width {
+  width: 100%;
+}
+
 
 .search-input-container {
   display: flex;
   align-items: center;
-  width: 100%;
-  gap: 10px; /* Väli hakukentän ja painikkeen välillä */
+  justify-content: center;
+  height: 100%; 
+  padding-right: 10px;
+  /*100125width: 100%;
+  gap: 10px;  Väli hakukentän ja painikkeen välillä */
 }
 
-.google-places-input {
-  flex-grow: 4; /* Tekstikenttä vie 4/5 leveydestä */
+/*.google-places-input {
+  flex-grow: 4; Tekstikenttä vie 4/5 leveydestä 
+}*/
+
+.google-places-input input {
+   flex: 1;
+}
+
+.google-places-input button {
+   margin-left: 10px;
 }
 
 *, ::before, ::after {
@@ -18,13 +33,11 @@
 }
 
 .settings-icon-button {
-  flex-grow: 0;
+ /* 100125 flex-grow: 0;*/
   background-color: #FFFAFA !important;
   /*border: 2px solid #cbc385 !important;*/
-
-  border-radius: 25% !important; /* Täysin pyöreä muoto */
+  border-radius: 25% !important; /* 25 100125 Täysin pyöreä muoto */
   border: 1px solid #e5e7eb !important;
-  
   padding: 0 !important;
   color: #333 !important;
   display: flex !important;
@@ -32,7 +45,7 @@
   justify-content: center !important;
   height: 40px !important;
   width: 40px !important; /* Leveys ja korkeus täsmälleen samat */
-  margin-left: auto !important; /* Siirtää napin oikeaan reunaan */
+ /*100125  margin-left: auto !important;  Siirtää napin oikeaan reunaan */
 }
 
 /* Piilotetaan settings-nappi suuremmilla näytöillä */ 
@@ -110,6 +123,32 @@ button:hover {
 }
 
 
+/* uudet css */
+
+.settings-icon-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap:10px;
+}
+
+.settings-icon-button {
+  background-color: #FFFAFA !important;
+  border-radius: 50% !important;
+  border: 1px solid #e5e7eb !important;
+  padding: 0 !important;
+  color: #333 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 40px !important;
+  width: 40px !important;
+}
+
+.google-places-input input {
+  width: calc(100% - 50px); /* Jätä tilaa ikonia varten */
+  padding-right: 50px; /* Varmistaa, että teksti ei mene päällekkäin ikon kanssa */
+}
 
 
 
