@@ -41,7 +41,7 @@ export default function AccessAccount() {
       className="display-1 d-flex justify-content-center align-items-center vh-100"
       style={{ marginTop: "-5%" }}
     >
-      Please wait...
+      please wait...
     </div>
   );
 }

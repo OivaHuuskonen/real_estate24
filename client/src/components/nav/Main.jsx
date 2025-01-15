@@ -88,7 +88,7 @@ useEffect(() => {
                     to="/dashboard"
                     onClick={() => setUserDropdown(false)} // Sulkee valikon klikkauksen jälkeen
                   >
-                    Dashboard
+                    dashboard
                   </NavLink>
                 </li>
                 <li>

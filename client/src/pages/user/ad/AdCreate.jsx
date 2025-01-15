@@ -5,7 +5,7 @@ import Sidebar from "../../../components/nav/Sidebar";
 const PageHeader = ({ title }) => (
   <div className="w-full text-align:left pb-12 pt-14 xl:pb-16 xl:pt-20 bg-[#51829B]">
     <div className="flex items-center pl-8">
-      <h1 className="text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
+      <h1 className="font-floral text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
         {title}
       </h1>
       {/*<img src={artNouveau} alt="Art Nouveau" className="h-[6em] w-auto ml-4 bg-[#51829B]" />*/}
@@ -49,7 +49,7 @@ export default function AdCreate() {
             dark:border-gray-600 dark:hover:text-white
             dark:hover:bg-gray-700"
           >
-            <span className="h2">Sell</span>
+            <span className="h2 font-floral">Sell</span>
           </button>
           {sell && (
             <div className="flex justify-center gap-4">
@@ -95,7 +95,7 @@ export default function AdCreate() {
             dark:border-gray-600 dark:hover:text-white
             dark:hover:bg-gray-700"
           >
-            <span className="h2">Rent</span>
+            <span className="h2 font-floral">Rent</span>
           </button>
           {rent && (
             <div className="flex justify-center gap-4">
