@@ -97,7 +97,7 @@ export default function Profile() {
               <form onSubmit={handleSubmit}>
               <div className="mb-4">
               <label htmlFor="username" className="font-floral block text-[#879c7d] mb-2">
-                  Username
+                  username
                 </label>
                 <input
                 id="username"
@@ -118,7 +118,7 @@ export default function Profile() {
                  id="name"
                   type="text"
                   placeholder="Enter your name"
-                  className="form-control mb-4"
+                  className="form-control mb-4 font-floral"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -130,67 +130,67 @@ export default function Profile() {
                 <input
                  id="email"
                   type="email"
-                  className="form-control mb-4"
+                  className="form-control mb-4 font-floral"
                   value={email}
                   disabled={true}
                 />
                 </div>
                  <div className="mb-4">
               <label htmlFor="username" className="font-floral block text-[#879c7d] mb-2">
-                  Company name
+                  company name
                 </label>
                 <input
                   id="company"
                   type="text"
-                  placeholder="Enter your company name"
+                  placeholder="Enter your company name font-floral "
                   className="form-control mb-4"
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
                 />
                 </div>
                  <div className="mb-4">
-              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+              <label htmlFor="username" className="font-floral block text-[#879c7d] mb-2">
                   address
                 </label>
                 <input
                   id="address"
                   type="text"
-                  placeholder="Enter your address"
-                  className="form-control mb-4"
+                  placeholder="enter your address"
+                  className="form-control mb-4 font-floral"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                 />
                 </div>
                  <div className="mb-4">
-              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+              <label htmlFor="username" className="font-floral block text-[#879c7d] mb-2">
                   phone number
                 </label>
                 <input
                   id="phone"
                   type="text"
-                  placeholder="Enter your phone"
-                  className="form-control mb-4"
+                  placeholder="enter your phone"
+                  className="form-control mb-4 font-floral"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
                 </div>
                  <div className="mb-4">
-              <label htmlFor="username" className="block text-[#879c7d] mb-2">
+              <label htmlFor="username" className="font-floral block text-[#879c7d] mb-2">
                   something about yourself
                 </label>
                 <textarea
                   id="about"
-                  placeholder="Write something interesting about yourself.."
-                  className="form-control mb-4"
+                  placeholder="write something interesting about yourself.."
+                  className="form-control mb-4 font-floral"
                   value={about}
                   onChange={(e) => setAbout(e.target.value)}
                   maxLength={200}
                 />
                 </div>
                 <button
-                  className="bg-[#cbc385] hover:bg-[#cf8c60] text-[#879c7d] py-2 px-4 rounded col-12"
+                  className="bg-[#cbc385] hover:bg-[#cf8c60] text-[#879c7d] font-floral py-2 px-4 rounded col-12"
                 >
-                  {loading ? "Processing" : "Update profile"}
+                  {loading ? "processing" : "update profile"}
                 </button>
                 
               </form>

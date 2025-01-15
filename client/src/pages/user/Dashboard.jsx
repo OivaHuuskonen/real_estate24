@@ -6,7 +6,7 @@ import UserAdCard from "../../components/cards/UserAdCard";
 
 const PageHeader = ({ title }) => (
   <div className="w-full text-align:left pb-12 pt-14 xl:pb-16 xl:pt-20 bg-[#51829B]">
-    <div className="flex items-center pl-8">
+    <div className="flex items-center pl-6">
       <h1 className="font-floral text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
         {title}
       </h1>
@@ -60,7 +60,7 @@ export default function Dashboard() {
       ) : (
         <>
         <div className="flex justify-center py-10">
-          <h1> {`Total ${total} ads found`} </h1>
+          <h1 className="font-floral"> {`total ${total} ads found`} </h1>
           </div>
           {/*<div className="grid grid-cols-1 
           md:grid-cols-3 

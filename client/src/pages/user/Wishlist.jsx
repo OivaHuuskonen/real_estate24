@@ -52,7 +52,7 @@ export default function Wishlist() {
       ) : (
         <>
           <div className="font-floral flex justify-center py-10">
-          <h1>You have liked {ads?.length} properties</h1>
+          <h1>you have liked {ads?.length} properties</h1>
           </div>
           {/*<div className="grid grid-cols-1 
           md:grid-cols-3 

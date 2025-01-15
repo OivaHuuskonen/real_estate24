@@ -26,18 +26,18 @@ export default function Sidebart() {
   return (
     <div className='bg-[#F5F5F5] w-full px-2 py-2 pb-1'>
       <div className="hidden md:flex justify-start gap-6">
-      <NavLink className="font-floral nav-link text-black" to="/dashboard">Dashboard</NavLink>
-        <NavLink className="nav-link text-black font-floral !important" to="/user/wishlist">Wishlist</NavLink>
-        <NavLink className="nav-link text-black font-floral !font-floral" to="/user/Enquiries">Enquiries</NavLink>
-        <NavLink className="nav-link text-black font-floral !font-floral" to="/ad/create">Create</NavLink>
-        <NavLink className="nav-link text-black font-floral !font-floral" to="/user/profile">Profile</NavLink>
-        <NavLink className="nav-link text-black font-floral !font-floral" to="/user/settings">Update password</NavLink>
+      <NavLink className="font-floral nav-link text-black" to="/dashboard">dashboard</NavLink>
+        <NavLink className="nav-link text-black font-floral !important" to="/user/wishlist">wishlist</NavLink>
+        <NavLink className="nav-link text-black font-floral !font-floral" to="/user/Enquiries">enquiries</NavLink>
+        <NavLink className="nav-link text-black font-floral !font-floral" to="/ad/create">create</NavLink>
+        <NavLink className="nav-link text-black font-floral !font-floral" to="/user/profile">profile</NavLink>
+        <NavLink className="nav-link text-black font-floral !font-floral" to="/user/settings">update password</NavLink>
       </div>
       <br></br>
       <div className='md:hidden z-20 flex items-center'>
         <LuLayoutDashboard onClick={handleClick} 
         style={{ width: '1.5rem', height: '1.5rem', marginRight: '0.5rem', color: '[#51829B]' }} />
-        <span onClick={handleClick} className='cursor-pointer'>Dashboard navigation</span>
+        <span onClick={handleClick} className='cursor-pointer font-floral'>dashboard navigation</span>
       </div>
       {/* Mobiilivalikko */}
       {nav && (
