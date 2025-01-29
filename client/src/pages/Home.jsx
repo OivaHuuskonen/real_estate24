@@ -19,7 +19,7 @@ import SearchMain from "../components/forms/SearchMain";
 
 const PageHeader = ({ title }) => (
   <div className="mx-auto w-full text-align:left pb-16 pt-20 bg-[#51829B]">
-    <h1 className="font-floral pl-8 text-5xl sm:text-7xl text-[#F5F5F5]">
+    <h1 className="pl-8 text-4xl sm:text-7xl text-[#F5F5F5]">
       {title}
     </h1>
   </div>
@@ -46,9 +46,11 @@ export default function Home() {
 
   return (
     <div name='home' className='max-w-screen w-full pb-10'>
+      <br></br><br></br>
         <div className="flex justify-center py-6 mx-auto">
         <SearchMain />
         </div>
+        <br></br>
         <div name="header" className="w-full">
         <PageHeader title="Real estate marketplace"/>
         </div>

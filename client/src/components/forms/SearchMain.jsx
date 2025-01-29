@@ -50,7 +50,6 @@ export default function SearchMain() {
 
   return (
     <div className="container">
-      {/* Search Input and Settings Button */}
       <div className="search-input-container google-places-input">
         <GooglePlacesAutocomplete
           apiKey={import.meta.env.VITE_GOOGLE_PLACES_KEY}
@@ -91,8 +90,8 @@ export default function SearchMain() {
         </button>
       </div>
 
-      {/* Button Group Section */}
-      <div className="button-group w-full px-2 d-none d-lg-flex">
+      
+      <div className="button-group w-full px-2 d-none d-lg-flex justify-center">
         <Button
           onClick={() => setSearch({ ...search, action: 'Buy', price: '' })}
           className={`btn ${search.action === 'Buy' && 'active'}`}
@@ -137,7 +136,7 @@ export default function SearchMain() {
         </Button>
       </div>
 
-      {/* Modal Section */}
+      
       <Modal show={show} onHide={handleClose} style={{ zIndex: 1250 }}>
         <Modal.Header closeButton>
           <Modal.Title>Search Options</Modal.Title>

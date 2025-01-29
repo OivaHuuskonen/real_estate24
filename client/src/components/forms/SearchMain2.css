@@ -1,0 +1,33 @@
+.google-places-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+  
+  .google-places-input input {
+    flex-grow: 1;
+    width: 100% !important;
+    padding-right: 40px;
+    box-sizing: border-box;
+  }
+  
+  @media (min-width: 768px) {
+    .google-places-input {
+      width: 50%; /* Hakukenttä on kapeampi suurilla näytöillä */
+    }
+  
+    .button-group {
+      display: flex;
+      justify-content: center;
+      width: 50%; /* Nappi rivistö on yhtä leveä kuin hakukenttä */
+      margin-top: 15px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .settings-icon-button {
+      display: none !important;
+    }
+  }
+  
