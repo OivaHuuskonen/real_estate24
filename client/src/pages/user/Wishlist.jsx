@@ -43,15 +43,15 @@ export default function Wishlist() {
       <Sidebar />
       {!ads?.length ? (
         <div
-          className="flex justify-center items-center text-center">
-          <h2 className="font-floral flex justify-center py-10">
+          className="flex justify-center items-center">
+          <h2 className="font-floral flex justify-center  text-align-center py-10">
             Hey {auth.user?.name ? auth.user?.name : auth.user?.username}, You
             have not liked any properties yet!
           </h2>
         </div>
       ) : (
         <>
-          <div className="font-floral flex justify-center py-10">
+          <div className="font-floral flex justify-center py-10 text-align-center">
           <h1>you have liked {ads?.length} properties</h1>
           </div>
           {/*<div className="grid grid-cols-1 

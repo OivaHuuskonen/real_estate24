@@ -34,9 +34,11 @@ export default function Rent() {
 
   return (
     <div className='w-full pb-10'>
-    <div className="flex justify-center py-10 mx-auto">
+         <br></br><br></br>
+    <div className="flex justify-center py-6 mx-auto">
         <SearchMain />
     </div>
+    <br></br>
       <div name="rent">
       <PageHeader title="For Rent"/>
       </div>

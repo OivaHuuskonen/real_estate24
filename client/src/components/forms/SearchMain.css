@@ -9,11 +9,19 @@
 }
 
 .container,
-.search-input-container {
+.search-input-container 
+{
   width: 100%;
   max-width: 100%;
   padding-left: 6px;
   padding-right: 6px;
+}
+
+@media (min-width: 992px) {
+  .google-places-input {
+    max-width: 70%; /* Vähentää leveyttä suurella näytöllä */
+    margin: 0 auto; /* Keskittää elementin */
+  }
 }
 
 .full-width {
@@ -47,17 +55,16 @@
 
 /* Settings-ikoni */
 .settings-icon-button {
-  background-color: #fffbfa !important;
-  border-color: #333 !important;
   border-radius: 10% !important;
   border: 1px solid #e5e7eb !important;
   padding: 0 !important;
-  color: #333 !important;
+  /*color: #333 !important;*/
+  margin-right: 7px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  height: 40px !important;
-  width: 40px !important;
+  height: 35px !important;
+  width: 35px !important;
 }
 
 .settings-icon-button:hover {
@@ -75,7 +82,7 @@
   }
 
   .button-group {
-    margin-top: 15px;
+    margin-top: 25px;
   }
 }
 
@@ -86,7 +93,7 @@ button {
   border-color: #cbc385 !important;
   border-radius: 0 !important;
   color: #333 !important;
-  padding: 20px 35px !important;
+  padding: 15px 75px !important;
 }
 
 button:hover {

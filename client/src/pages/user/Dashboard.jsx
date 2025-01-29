@@ -52,7 +52,7 @@ export default function Dashboard() {
       <Sidebar />
       {!seller ? (
         <div className="flex justify-center items-center text-center">
-          <h2 className="flex justify-center py-10 font-floral">
+          <h2 className="flex justify-center py-10">
             Hey {auth.user?.name ? auth.user?.name : auth.user?.username},
             Welcome to property realization marketplace App!
           </h2>

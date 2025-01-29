@@ -103,7 +103,7 @@ export default function Profile() {
                 id="username"
                   type="text"
                   placeholder="Update your username"
-                  className="form-control"
+                  className="form-control font-floral"
                   value={username}
                   onChange={(e) =>
                     setUsername(slugify(e.target.value.toLowerCase()))
