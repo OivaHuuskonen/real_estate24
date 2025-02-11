@@ -19,6 +19,7 @@ const AuthProvider = ({ children }) => {
 
   // configure axios
   axios.defaults.baseURL = API;
+  console.log("Axios Base URL:", API); 
   axios.defaults.headers.common["Authorization"] = auth?.token;
   axios.defaults.headers.common["refresh_token"] = auth?.refreshToken;
 

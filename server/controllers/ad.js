@@ -374,11 +374,81 @@ export const adsForRent = async (req, res) => {
 
 export const search = async (req, res) => {
   try {
-    console.log("req query", req.query);
+    console.log("Search query params:", req.query);
     const { action, address, type, priceRange } = req.query;
 
     const geo = await config.GOOGLE_GEOCODER.geocode(address);
-    // console.log("geo => ", geo);
+    console.log("Geocoding results:", geo);
+
+    if (!geo?.[0]?.latitude || !geo?.[0]?.longitude) {
+      return res.status(400).json({ error: "Location not found" });
+    }
+
+    // Haetaan kunnan/kaupungin nimi geocoding-tuloksista
+    const locality = geo[0].city || geo[0].administrativeLevels?.level1long || geo[0].county;
+    console.log("Searching in locality:", locality);
+
+    const query = {
+      action: action === "Buy" ? "Sell" : "Rent",
+      type,
+      price: {
+        $gte: parseInt(priceRange[0]),
+        $lte: parseInt(priceRange[1]),
+      },
+      // Käytetään $geoNear aggregaatiota tarkempaan sijaintihakuun
+      location: {
+        $near: {
+          $geometry: {
+            type: "Point",
+            coordinates: [geo[0].longitude, geo[0].latitude]
+          },
+          $maxDistance: 5000, // 5km säde
+          $minDistance: 0
+        }
+      }
+    };
+
+    // Lisätään tekstihaku osoitteelle
+    if (locality) {
+      query["$or"] = [
+        { "googleMap.0.city": new RegExp(locality, "i") },
+        { "googleMap.0.county": new RegExp(locality, "i") },
+        { "googleMap.0.administrativeLevels.level1long": new RegExp(locality, "i") }
+      ];
+    }
+
+    console.log("MongoDB query:", JSON.stringify(query, null, 2));
+
+    const ads = await Ad.find(query)
+      .limit(24)
+      .sort({ createdAt: -1 })
+      .select("-photos.key -photos.Key -photos.ETag -photos.Bucket -location -googleMap");
+
+    console.log(`Found ${ads.length} matching ads`);
+    res.json(ads);
+
+  } catch (err) {
+    console.error("Search error:", err);
+    res.status(500).json({ error: "Search failed" });
+  }
+};
+
+
+
+
+/*export const search = async (req, res) => {
+  try {
+    console.log("search req query", req.query);
+    const { action, address, type, priceRange } = req.query;
+
+    const geo = await config.GOOGLE_GEOCODER.geocode(address);
+    console.log("geocoding results: ", geo);
+
+    if (!geo?.[0]?.latitude || !geo?.[0]?.longitude) {
+      return res.status(400).json({ error: "Location not found" });
+    }
+
+
 
     const ads = await Ad.find({
       action: action === "Buy" ? "Sell" : "Rent",
@@ -393,6 +463,7 @@ export const search = async (req, res) => {
           $geometry: {
             type: "Point",
             coordinates: [geo?.[0]?.longitude, geo?.[0]?.latitude],
+            $maxDistance: 10000,
           },
         },
       },
@@ -407,4 +478,4 @@ export const search = async (req, res) => {
   } catch (err) {
     console.log();
   }
-};
+};*/
