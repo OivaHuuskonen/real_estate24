@@ -13,10 +13,10 @@ export default function Search() {
      <div className="flex justify-center py-10 mx-auto">
       <SearchMain />
       </div>
-      <div name="seacrh">
+      <div name="search">
         <div className="row">
           {search.results?.length > 0 ? (
-            <div className="col-md-12 font-floral text-center p-5">
+            <div className="col-md-12 text-center p-5">
               found {search.results?.length} results
             </div>
           ) : (

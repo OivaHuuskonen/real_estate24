@@ -35,7 +35,7 @@ const sellPrices = [
     {
       _id: 0,
       name: "All price",
-      array: [0, 1500],
+      array: [0, 555500],
     },
     {
       _id: 1,

@@ -37,10 +37,11 @@ export default function Home() {
   const fetchAds = async () => {
     try {
       const { data } = await axios.get("/ads");
+    //  console.log("Fetched ads:", data);  // Tulosta tiedot varmistaaksesi, että haetaan jotain
       setAdsForSell(data.adsForSell);
       setAdsForRent(data.adsForRent);
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      //console.log("axios error: ", error.message);
     }
   };
 
