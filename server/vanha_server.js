@@ -1,4 +1,4 @@
-import { ServerSideEncryption } from "@aws-sdk/client-s3"
+//import { ServerSideEncryption } from "@aws-sdk/client-s3"
 
 /*import 'dotenv/config';
 import express from "express";

@@ -1,3 +1,0 @@
-VITE_API=http://localhost:8000/api
-VITE_GOOGLE_MAPS_KEY=my_maps_key
-VITE_GOOGLE_PLACES_KEY=my_places_key
