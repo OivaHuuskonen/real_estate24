@@ -66,8 +66,8 @@ app.use("/api", authRoutes);
 app.use("/api", adRoutes);
 app.use("/api", geocodeRoutes);
 
-console.log("MongoDB URI:", process.env.DATABASE);
-console.log("Google API Key from ENV:", process.env.GOOGLE_GEOCODE_API_KEY);
+//console.log("MongoDB URI:", process.env.DATABASE);
+//console.log("Google API Key from ENV:", process.env.GOOGLE_GEOCODE_API_KEY);
 
 // Geocoding API -reitti Expressin kautta
 /*app.get('/geocode', async (req, res) => {
