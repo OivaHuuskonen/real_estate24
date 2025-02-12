@@ -39,7 +39,7 @@ export default function UserCard({ user, className }) {
             />
 
             <div className="card-body">
-              <h3 className="text-2xl pl-2 pt-6 pb-1 font-semibold">{user?.name ?? user?.username}</h3>
+              <h3 className="text-2xl pl-2 pt-6 pb-1">{user?.name ?? user?.username}</h3>
               <p className="text-md text-gray-600 pl-2 pb-2">
                 Joined {dayjs(user.createdAt).fromNow()}
               </p>

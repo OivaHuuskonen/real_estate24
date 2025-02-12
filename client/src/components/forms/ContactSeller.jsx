@@ -63,7 +63,7 @@ export default function ContactSeller({ ad }) {
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="w-full max-w-xl bg-white p-6 rounded-lg shadow-md">
-        <h3 className="text-2xl font-semibold text-center mb-6">
+        <h3 className="text-2xl text-center mb-6">
   Please contact {ad?.postedBy?.name ? ad?.postedBy?.name : ad?.postedBy?.username}
   <MdEmail style={{ fontSize: 28, color: '#cbc385', display: 'inline-block', verticalAlign: 'middle' }} />
 </h3>

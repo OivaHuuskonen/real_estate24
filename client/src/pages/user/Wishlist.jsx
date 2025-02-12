@@ -44,7 +44,7 @@ export default function Wishlist() {
       {!ads?.length ? (
         <div
           className="flex justify-center items-center">
-          <h2 className="font-floral flex justify-center  text-align-center py-10">
+          <h2 className="font-yeseva-one-regular flex justify-center  text-align-center py-10">
             Hey {auth.user?.name ? auth.user?.name : auth.user?.username}, You
             have not liked any properties yet!
           </h2>
