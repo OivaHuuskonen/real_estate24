@@ -13,6 +13,7 @@ module.exports = {
         //'lancelot-regular': ['"Lancelot"', 'serif'],      
         // 'pointer': ['"Poiret One"', 'serif'],
         // 'castoro-titling': ['"Castoro Titling"', 'serif'],
+        'yeseva-one-regular': ['"Yeseva One"', 'serif'],
       },
       colors: {
         'custom-beige': '#cbc385',
