@@ -24,7 +24,7 @@ export default function Sidebart() {
   };
 
   return (
-    <div className='bg-[#F5F5F5] w-full px-2 py-2 pb-2'>
+    <div className='bg-[#F5F5F5] w-full px-2 py-2 pb-4'>
       <div className="hidden md:flex justify-start gap-6">
       <NavLink className="font-yeseva-one nav-link text-black" to="/dashboard">dashboard</NavLink>
         <NavLink className="nav-link text-black font-yeseva-one !important" to="/user/wishlist">wishlist</NavLink>
