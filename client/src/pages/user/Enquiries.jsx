@@ -43,7 +43,7 @@ export default function Enquiries() {
       <Sidebar />
 
       {!ads?.length ? (
-        <div className="flex justify-center items-center text-center">
+        <div className="flex justify-center items-center text-center !important">
           <h2 className="flex justify-center py-10 font-yeseva-one-regular">
             Hey {auth.user?.name ? auth.user?.name : auth.user?.username},
             <br></br>
@@ -53,7 +53,7 @@ export default function Enquiries() {
       ) : (
         <>
           <div className="flex flex-col items-center">
-            <h1 className="font-yeseva-one-regular flex justify-center py-10">
+            <h1 className="font-yeseva-one-regular flex justify-center py-10 text-center !important">
               You have enquired 
               {ads?.length}  properties</h1>
             <div className="grid grid-cols-1 
