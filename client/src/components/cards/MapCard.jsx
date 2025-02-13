@@ -9,7 +9,7 @@ function MapCard({ ad }) {
     async: true,
   });
 
-  console.log("Is Google Map loaded?", isLoaded);
+  //console.log("Is Google Map loaded?", isLoaded);
 
   /*if (!ad?.location?.coordinates) {
     return <div>No location data available</div>;
@@ -31,7 +31,7 @@ function MapCard({ ad }) {
   }, [center]);*/
 
   const onLoad = useCallback(function callback(map) {
-    console.log("Map loaded");
+    //console.log("Map loaded");
     map.setCenter(center);
     map.setZoom(12);
     setMap(map);

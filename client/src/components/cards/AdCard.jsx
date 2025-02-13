@@ -14,8 +14,8 @@ export default function AdCard({ ad, className  }) {
         <Badge.Ribbon 
         text={`${ad?.type} for ${ad?.action}`} 
         color={badgeColor} 
-        style={{ fontFamily: 'floral', fontWeight: 'normal' }}
-        className="font-floral text-sm md:text-base" 
+        style={{ fontFamily: 'yeseva one', fontWeight: 'normal' }}
+        className="font-yeseva-one text-sm md:text-base" 
         >
           <div className="card hoverable shadow-lg shadow-[#879c7d] rounded-md my-card pb-4 w-90 h-100"> {/* Määritellään kortin koko */}
             <img
@@ -24,8 +24,8 @@ export default function AdCard({ ad, className  }) {
               className="w-full h-60 object-cover rounded-t-md" // Määritellään kuvan koko ja sovitus
               />
               <div className="card-body">
-              <h3 className="font-floral text-2xl pl-2 pt-6 pb-1 ">{formatNumber(ad?.price)}€</h3>
-              <p className="font-floral text-md text-[#879c7d] pl-2 pb-2">{ad?.address}</p>
+              <h3 className="font-yeseva-onetext-2xl pl-2 pt-6 pb-1 ">{formatNumber(ad?.price)}€</h3>
+              <p className="font-yeseva-one text-md text-[#879c7d] pl-2 pb-2">{ad?.address}</p>
               <AdFeatures ad={ad} layout="spread" />
             </div>
           </div>

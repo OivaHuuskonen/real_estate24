@@ -39,7 +39,7 @@ export default function AdForm({ action, type }) {
       const slug = slugify(ad.title || '', { lower: true }); // Lisää tyhjä merkkijono varmuuden vuoksi ja varmista, että kaikki kirjaimet ovat pieniä
       setAd({ ...ad, loading: true });
       const { data } = await axios.post("/ad", ad);
-      console.log("ad create response => ", data);
+      //console.log("ad create response => ", data);
       if (data?.error) {
         toast.error(data.error);
         setAd({ ...ad, loading: false });
@@ -66,6 +66,7 @@ export default function AdForm({ action, type }) {
     <>
       <div className="mb-3 form-control">
         <ImageUpload ad={ad} setAd={setAd} />
+        <br></br>
         <GooglePlacesAutocomplete
           apiKey={import.meta.env.VITE_GOOGLE_PLACES_KEY}
           //apiOptions="au"
@@ -79,16 +80,13 @@ export default function AdForm({ action, type }) {
         />
       </div>
 
-
         <CurrencyInput
           placeholder="Enter price"
           defaultValue={ad.price}
           className="form-control mb-3"
           onValueChange={(value) => setAd({ ...ad, price: value })}
         />
-      
-
-      {type === "House" ? (
+         {type === "House" ? (
         <>
           <input
             type="number"

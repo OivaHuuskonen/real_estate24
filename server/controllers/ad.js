@@ -1,44 +1,59 @@
 import * as config from "../config.js";
-import { nanoid } from "nanoid";
+import { AWSS3 } from "../config.js";
 import Ad from "../models/ad.js";
 import User from "../models/user.js";
 import slugify from "slugify";
 import { emailTemplate } from "../helpers/email.js";
+import { PutObjectCommand } from "@aws-sdk/client-s3";
+import { SendEmailCommand } from "@aws-sdk/client-ses"; 
+import { nanoid } from 'nanoid';
 
 export const uploadImage = async (req, res) => {
   try {
-    // console.log(req.body); // Debugging step to ensure image data is received correctly
+    // Extract the base64 data from the request
     const { image } = req.body;
-
-    if (!image) {
-      return res.status(400).json({ error: "No image data provided" });
-    }
-
-    const base64Image = Buffer.from(
-    image.replace(/^data:image\/\w+;base64,/, ""), "base64");
-    const type = image.split(";")[0].split("/")[1];
-
+    
+    // Prepare the base64 data
+    const base64Data = new Buffer.from(
+      image.replace(/^data:image\/\w+;base64,/, ''),
+      'base64'
+    );
+    
+    // Get the file type
+    const type = image.split(';')[0].split('/')[1];
+    
+    // Parameters for S3 upload
     const params = {
-      Bucket: "emarket24",
+      Bucket: 'emarket24', 
       Key: `${nanoid()}.${type}`,
-      Body: base64Image,
-      ACL: "public-read",
-      ContentEncoding: "base64",
-      ContentType: `image/${type}`,
+      Body: base64Data,
+      ACL: 'public-read',
+      ContentEncoding: 'base64',
+      ContentType: `image/${type}`
     };
 
-    config.AWSS3.upload(params, (err, data) => {
-      if (err) {
-        console.log(err);
-        return res.status(400).json({ error: "Failed to upload to S3" });
-      } else {
-        console.log(data);
-        res.send(data);
-      }
-    });
+    try {
+      // Use the PutObjectCommand with the S3 client
+      const command = new PutObjectCommand(params);
+      const data = await AWSS3.send(command);
+      
+      // Construct the file URL
+      const fileUrl = `https://${params.Bucket}.s3.amazonaws.com/${params.Key}`;
+      
+      // Return the response
+      return res.json({
+        url: fileUrl,
+        key: params.Key,
+        Location: fileUrl // For compatibility with your frontend code
+      });
+      
+    } catch (err) {
+      console.log("S3 UPLOAD ERROR", err);
+      return res.status(400).json({ error: "S3 upload failed" });
+    }
   } catch (err) {
     console.log(err);
-    res.status(500).json({ error: "Upload failed. Try again." });
+    return res.status(500).json({ error: "Upload failed" });
   }
 };
 
@@ -212,7 +227,39 @@ export const contactSeller = async (req, res) => {
       return res.json({ error: "Could not find user with that email" });
     } else {
       // send email
-      config.AWSSES.sendEmail(
+
+      const emailParams = emailTemplate(
+        ad.postedBy.email,
+        `<p>You have received a new customer enquiry</p>
+          <h4>Customer details</h4>
+          <p>Name: ${name}</p>
+          <p>Email: ${email}</p>
+          <p>Phone: ${phone}</p>
+          <p>Message: ${message}</p>
+          <a href="${config.CLIENT_URL}/ad/${ad.slug}">${ad.type} in ${ad.address} for ${ad.action} ${ad.price}</a>
+        `,
+        email,
+        "New enquiry received"
+      );
+
+      try {
+        const command = new SendEmailCommand(emailParams);
+        const data = await config.AWSSES.send(command);
+        console.log("Email sent successfully:", data);
+        return res.json({ ok: true });
+      } catch (err) {
+        console.log("Error sending email:", err);
+        return res.json({ ok: false });
+      }
+    }
+  } catch (err) {
+    console.log("Controller error:", err);
+    return res.status(500).json({ error: "Failed to process request" });
+  }
+};
+
+
+      /*config.AWSSES.sendEmail(
         emailTemplate(
           ad.postedBy.email,
           `<p>You have received a new customer enquiry</p>
@@ -240,7 +287,7 @@ export const contactSeller = async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-};
+};*/
 
 export const userAds = async (req, res) => {
   try {
@@ -407,7 +454,6 @@ export const search = async (req, res) => {
         }
       }
     };
-
     // Lisätään tekstihaku osoitteelle
     if (locality) {
       query["$or"] = [
@@ -434,48 +480,3 @@ export const search = async (req, res) => {
 };
 
 
-
-
-/*export const search = async (req, res) => {
-  try {
-    console.log("search req query", req.query);
-    const { action, address, type, priceRange } = req.query;
-
-    const geo = await config.GOOGLE_GEOCODER.geocode(address);
-    console.log("geocoding results: ", geo);
-
-    if (!geo?.[0]?.latitude || !geo?.[0]?.longitude) {
-      return res.status(400).json({ error: "Location not found" });
-    }
-
-
-
-    const ads = await Ad.find({
-      action: action === "Buy" ? "Sell" : "Rent",
-      type,
-      price: {
-        $gte: parseInt(priceRange[0]),
-        $lte: parseInt(priceRange[1]),
-      },
-      location: {
-        $near: {
-          $maxDistance: 50000, // 1000m = 1km
-          $geometry: {
-            type: "Point",
-            coordinates: [geo?.[0]?.longitude, geo?.[0]?.latitude],
-            $maxDistance: 10000,
-          },
-        },
-      },
-    })
-      .limit(24)
-      .sort({ createdAt: -1 })
-      .select(
-        "-photos.key -photos.Key -photos.ETag -photos.Bucket -location -googleMap"
-      );
-    // console.log(ads);
-    res.json(ads);
-  } catch (err) {
-    console.log();
-  }
-};*/
