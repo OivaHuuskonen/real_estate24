@@ -7,10 +7,9 @@ import AdCard from "../../components/cards/AdCard";
 const PageHeader = ({ title }) => (
   <div className="w-full text-align:left pb-12 pt-14 xl:pb-16 xl:pt-20 bg-[#51829B]">
     <div className="flex items-center pl-8">
-      <h1 className="font-floral text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
+      <h1 className="font-yeseva-one-regular text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
         {title}
       </h1>
-      {/*<img src={artNouveau} alt="Art Nouveau" className="h-[6em] w-auto ml-4 bg-[#51829B]" />*/}
     </div>
   </div>
 );
@@ -44,36 +43,16 @@ export default function Wishlist() {
       {!ads?.length ? (
         <div
           className="flex justify-center items-center">
-          <h2 className="font-yeseva-one-regular flex justify-center  text-align-center py-10">
+          <h2 className="font-yeseva-one-regular flex justify-center py-10">
             Hey {auth.user?.name ? auth.user?.name : auth.user?.username}, You
             have not liked any properties yet!
           </h2>
         </div>
       ) : (
         <>
-          <div className="font-floral flex justify-center py-10 text-align-center">
+          <div className="font-yeseva-one-regular flex justify-center py-10">
           <h1>you have liked {ads?.length} properties</h1>
-          </div>
-          {/*<div className="grid grid-cols-1 
-          md:grid-cols-3 
-          justify-center 
-          gap-0 
-          gap-y-10 
-          place-items-center 
-          px-20 
-          py-10 
-          bg-[#FFFAFA]">
-            {ads?.map((ad, index) => (
-              <AdCard 
-              ad={ad} 
-              key={ad._id} 
-              className={index % 3 === 0 ? 'justify-self-end' :
-                index % 3 === 1 ? '' :
-                'justify-self-start'}
-              />
-            ))}
-          </div>*/}
-          
+          </div>          
                   <div className="grid grid-cols-1 
                   sm:grid-cols-1 
                   md:grid-cols-2 

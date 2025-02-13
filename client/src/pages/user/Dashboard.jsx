@@ -10,7 +10,6 @@ const PageHeader = ({ title }) => (
       <h1 className="font-yeseva-one-regular text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
         {title}
       </h1>
-      {/*<img src={artNouveau} alt="Art Nouveau" className="h-[6em] w-auto ml-4 bg-[#51829B]" />*/}
     </div>
   </div>
 );
@@ -23,7 +22,6 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(false);
 
   const seller = auth.user?.role?.includes("Seller");
-
 
   useEffect(() => {
     fetchAds(3);
@@ -52,7 +50,7 @@ export default function Dashboard() {
       <Sidebar />
       {!seller ? (
         <div className="flex justify-center items-center text-center">
-          <h2 className="flex justify-center py-10">
+          <h2 className="flex justify-center py-10 font-yeseva-one-regular">
             Hey {auth.user?.name ? auth.user?.name : auth.user?.username},
             Welcome to property realization marketplace App!
           </h2>
@@ -60,25 +58,8 @@ export default function Dashboard() {
       ) : (
         <>
         <div className="flex justify-center py-10">
-          <h1 className="font-floral"> {`total ${total} ads found`} </h1>
+          <h1 className="font-yeseva-one-regular"> {`total ${total} ads found`} </h1>
           </div>
-          {/*<div className="grid grid-cols-1 
-          md:grid-cols-3 
-          justify-center 
-          mb-10 gap-y-10 
-          place-items-center 
-          px-20 py-10 bg-[#FFFAFA]">
-            {ads?.map((ad, index) => (
-              <UserAdCard 
-                ad={ad} 
-                key={ad._id} 
-                className={index % 3 === 0 ? 'justify-self-end' :
-                index % 3 === 1 ? '' :
-                'justify-self-start'}
-              />
-            ))}
-          </div>*/}
-
             <div className="grid grid-cols-1 
                   sm:grid-cols-1 
                   md:grid-cols-2 
@@ -99,7 +80,7 @@ export default function Dashboard() {
                     <div className="flex justify-center mt-4 mb-4">
                       <button
                         disabled={loading}
-                        className="bg-[#cbc385] hover:bg-[#cf8c60] text-[#879c7d]  py-2 px-4 rounded"
+                        className="bg-[#cbc385] hover:bg-[#cf8c60] text-[#879c7d] font-yeseva-one-regular py-2 px-4 rounded"
                         onClick={(e) => {
                           e.preventDefault();
                           setPage(page + 1);

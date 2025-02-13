@@ -7,7 +7,6 @@ const PageHeader = ({ title }) => (
       <h1 className="text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
         {title}
       </h1>
-      {/*<img src={artNouveau} alt="Art Nouveau" className="h-[6em] w-auto ml-4 bg-[#51829B]" />*/}
     </div>
   </div>
 );

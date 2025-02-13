@@ -3,8 +3,8 @@ import Sidebar from "../../components/nav/Sidebar";
 import { useAuth } from "../../context/auth";
 import axios from "axios";
 import AdCard from "../../components/cards/AdCard";
-import LikeUnlike from "../../components/misc/LikeUnlike";
-import { FcLike, FcLikePlaceholder } from "react-icons/fc";
+//import LikeUnlike from "../../components/misc/LikeUnlike";
+//import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 
 
 const PageHeader = ({ title }) => (
@@ -44,7 +44,7 @@ export default function Enquiries() {
 
       {!ads?.length ? (
         <div className="flex justify-center items-center text-center">
-          <h2 className="flex justify-center py-10 font-floral">
+          <h2 className="flex justify-center py-10 font-yeseva-one-regular">
             Hey {auth.user?.name ? auth.user?.name : auth.user?.username},
             <br></br>
             You have not enquired any properties yet!
@@ -53,9 +53,8 @@ export default function Enquiries() {
       ) : (
         <>
           <div className="flex flex-col items-center">
-            <h1 className="font-floral flex justify-center py-10">
+            <h1 className="font-yeseva-one-regular flex justify-center py-10">
               You have enquired 
-                      <FcLikePlaceholder className="text-3xl"/>
               {ads?.length}  properties</h1>
             <div className="grid grid-cols-1 
                     sm:grid-cols-1 
