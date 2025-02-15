@@ -58,7 +58,26 @@ export const preRegister = async (req, res) => {
       expiresIn: "1h",
     });
 
-    config.AWSSES.sendEmail(
+ // Create the email command
+ const emailParams = emailTemplate(
+  email,
+  `
+  <p>Please click the link below to activate your account.</p>
+  <a href="${config.CLIENT_URL}/auth/account-activate/${token}">Activate my account</a>
+  `,
+  config.REPLY_TO,
+  "Activate your account"
+);
+
+try {
+  await config.sendEmail(emailParams);
+  return res.json({ ok: true });
+} catch (err) {
+  console.log("SES ERROR => ", err);
+  return res.json({ error: "Error sending email. Please try again." });
+}
+
+    /*config.AWSSES.sendEmail(
       emailTemplate(
         email,
         `
@@ -77,7 +96,8 @@ export const preRegister = async (req, res) => {
           return res.json({ ok: true });
         }
       }
-    );
+    );*/
+
   } catch (err) {
     console.log(err);
     return res.json({ error: "Something went wrong. Try again." });
