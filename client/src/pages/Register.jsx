@@ -17,7 +17,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // console.log(email, password);
+      console.log(email, password);
       setLoading(true);
       const { data } = await axios.post(`/pre-register`, {
         email,
