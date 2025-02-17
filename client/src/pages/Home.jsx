@@ -3,19 +3,6 @@ import { useAuth } from "../context/auth";
 import axios from "axios";
 import AdCard from "../components/cards/AdCard";
 import SearchMain from "../components/forms/SearchMain";
-//import leafyIcon from '../assets/leafy.png'; 
-//import artNouveau from '../assets/art-nouveau.png'
-
-/*const PageHeader = ({ title }) => (
-  <div className="w-full text-align:left pb-12 pt-14 xl:pb-16 xl:pt-20 bg-[#51829B]">
-    <div className="flex items-center pl-8">
-      <h1 className="text-align:left text-6xl md:text-6xl xl:text-7xl text-[#F5F5F5]">
-        {title}
-      </h1>
-      <img src={artNouveau} alt="Art Nouveau" className="h-[6em] w-auto ml-4 bg-[#51829B]" />
-    </div>
-  </div>
-);*/
 
 const PageHeader = ({ title }) => (
   <div className="mx-auto w-full text-align:left pb-16 pt-20 bg-[#51829B]">
@@ -53,7 +40,7 @@ export default function Home() {
         </div>
         <br></br>
         <div name="header" className="w-full">
-        <PageHeader title="Real estate marketplace"/>
+        <PageHeader title="Real Estate Marketplace"/>
         </div>
   
         <div className="grid grid-cols-1 
