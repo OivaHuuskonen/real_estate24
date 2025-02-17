@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, createContext, useContext, useEffect } from "react";
 import axios from "axios";
-import { API } from "./config.js";
+import { API } from './config.js';
 
 const AuthContext = createContext();
 
@@ -19,7 +19,7 @@ const AuthProvider = ({ children }) => {
 
   // configure axios
   axios.defaults.baseURL = API;
-  //console.log("Axios Base URL:", API); 
+  console.log("Axios Base URL:", API); 
   axios.defaults.headers.common["Authorization"] = auth?.token;
   axios.defaults.headers.common["refresh_token"] = auth?.refreshToken;
 
