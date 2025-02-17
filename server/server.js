@@ -36,13 +36,6 @@ const app = express();
 app.options("*", cors());
 app.use(express.static('dist'));
 
-// DB-yhteys
-/*mongoose.set("strictQuery", false);
-mongoose
-  .connect(DATABASE)
-  .then(() => console.log("DB connected"))
-  .catch((err) => console.error("DB connection error:", err.message));*/
-
   const connectDB = async () => {
     try {
       await mongoose.connect(DATABASE); 
