@@ -8,7 +8,8 @@ export default defineConfig({
     host: true, // Tämä sallii kaikkien IP-osoitteiden käytön
     port: 5174, // Oletusportti, voit vaihtaa tarvittaessa
   },
-})*/
+}) 
+*/
 
 export default defineConfig({
   plugins: [react()],
@@ -22,6 +23,11 @@ export default defineConfig({
         changeOrigin: true,
        // rewrite: (path) => path.replace(/^\/api/, '') // Poistaa ylimääräisen "/api"-prefiksin
       }
+    }
+  },
+  build: {
+    rollupOptions: {
+      external: ['src/context/config.js']
     }
   }
 });
