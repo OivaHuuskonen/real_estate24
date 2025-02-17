@@ -24,11 +24,11 @@ export default defineConfig({
        // rewrite: (path) => path.replace(/^\/api/, '') // Poistaa ylimääräisen "/api"-prefiksin
       }
     }
-  },
+  }/*,
   build: {
     rollupOptions: {
       external: ['src/context/config.js']
     }
-  }
+  }*/
 });
 
