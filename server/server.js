@@ -13,22 +13,10 @@ import axios from "axios";
 dotenv.config();
 const app = express();
 
-// CORS-asetukset oikein
-/*app.use(cors({
-  origin: ['http://localhost:5173', 'https://real-estate0824.onrender.com'],
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));*/
-
-
-/*app.use(cors({
-    origin: 'http://localhost:5173',  // Salli frontendin osoite
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization', 'refresh_token']  // Lisää refresh_token
-  }));*/
-
+// CORS-asetukset 
   app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174'], // Lisää kaikki sallitut originit
+    origin: ['http://localhost:5173', 'http://localhost:5174', 'https://real-estate24-huz7.vercel.app'], 
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization', 'refresh_token']
 }));
