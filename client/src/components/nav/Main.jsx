@@ -59,19 +59,19 @@ useEffect(() => {
 
 
   return (
-    <div className='bg-[#F5F5F5] w-full px-4 py-2 pb-6'>
+    <div className='bg-[#F5F5F5] w-full font-yeseva-one-regular font-light text-[#51829B] px-4 py-2 pb-6'>
       <div className="hidden md:flex justify-between">
         {/* Linkit  #F5F5F5  */}
-        <NavLink className="nav-link text-black" to="/">home</NavLink>
-        <NavLink className="nav-link text-black" to="/search">search</NavLink>
-        <NavLink className="nav-link text-black" to="/buy">buy</NavLink>
-        <NavLink className="nav-link text-black" to="/rent">rent</NavLink>
-        <NavLink className="nav-link text-black" to="/agents">agents</NavLink>
-        <a className="nav-link text-black pointer" onClick={handlePostAdClick}>post ad</a>
+        <NavLink className="nav-link" to="/">home</NavLink>
+        <NavLink className="nav-link" to="/search">search</NavLink>
+        <NavLink className="nav-link" to="/buy">buy</NavLink>
+        <NavLink className="nav-link" to="/rent">rent</NavLink>
+        <NavLink className="nav-link" to="/agents">agents</NavLink>
+        <a className="nav-link pointer" onClick={handlePostAdClick}>post ad</a>
         {!loggedIn ? (
           <>
-            <NavLink className="nav-link text-black" to="/login">login</NavLink>
-            <NavLink className="nav-link text-black" to="/register">register</NavLink>
+            <NavLink className="nav-link" to="/login">login</NavLink>
+            <NavLink className="nav-link" to="/register">register</NavLink>
           </>
         ) : (
           <div className="relative" ref={userDropdownRef}>
@@ -114,41 +114,41 @@ useEffect(() => {
       {/* Mobiilivalikko */}
       {nav && (
         <div className='fixed top-0 right-0 w-[60%] max-w-md h-screen bg-[rgba(253, 235, 211, 0.8)] backdrop-filter backdrop-blur-md flex flex-col justify-center items-center z-50'>
-          <ul className='font-floral text-[#679186]'>
+          <ul className='font-yeseva-one text-[#51549C]'>
             <li className='py-6 text-4xl'>
-              <NavLink className="nav-link text-black" to="/" onClick={handleClick}>Home</NavLink>
+              <NavLink className="nav-link" to="/" onClick={handleClick}>Home</NavLink>
             </li>
             <li className='py-6 text-4xl'>
-              <NavLink className="nav-link text-black" to="/search" onClick={handleClick}>Search</NavLink>
+              <NavLink className="nav-link" to="/search" onClick={handleClick}>Search</NavLink>
             </li>
             <li className='py-6 text-4xl'>
-              <NavLink className="nav-link text-black" to="/buy" onClick={handleClick}>Buy</NavLink>
+              <NavLink className="nav-link" to="/buy" onClick={handleClick}>Buy</NavLink>
             </li>
             <li className='py-6 text-4xl'>
-              <NavLink className="nav-link text-black" to="/rent" onClick={handleClick}>Rent</NavLink>
+              <NavLink className="nav-link" to="/rent" onClick={handleClick}>Rent</NavLink>
             </li>
             <li className='py-6 text-4xl'>
-              <NavLink className="nav-link text-black" to="/agents" onClick={handleClick}>Agents</NavLink>
+              <NavLink className="nav-link" to="/agents" onClick={handleClick}>Agents</NavLink>
             </li>
             <li className='py-6 text-4xl'>
-              <a className="nav-link text-black pointer" onClick={() => { handlePostAdClick(); handleClick(); }}>Post Ad</a>
+              <a className="nav-link pointer" onClick={() => { handlePostAdClick(); handleClick(); }}>Post Ad</a>
             </li>
             {!loggedIn ? (
               <>
                 <li className='py-6 text-4xl'>
-                  <NavLink className="nav-link text-black" to="/login" onClick={handleClick}>Login</NavLink>
+                  <NavLink className="nav-link" to="/login" onClick={handleClick}>Login</NavLink>
                 </li>
                 <li className='py-6 text-4xl'>
-                  <NavLink className="nav-link text-black" to="/register" onClick={handleClick}>Register</NavLink>
+                  <NavLink className="nav-link" to="/register" onClick={handleClick}>Register</NavLink>
                 </li>
               </>
             ) : (
               <div>
                 <li className='py-6 text-4xl'>
-                  <NavLink className="nav-link text-black" to="/dashboard" onClick={handleClick}>Dashboard</NavLink>
+                  <NavLink className="nav-link" to="/dashboard" onClick={handleClick}>Dashboard</NavLink>
                 </li>
                 <li className='py-6 text-4xl'>
-                  <a onClick={() => { logout(); handleClick(); }} className="nav-link text-black">Logout</a>
+                  <a onClick={() => { logout(); handleClick(); }} className="nav-link">Logout</a>
                 </li>
               </div>
             )}
@@ -159,11 +159,3 @@ useEffect(() => {
   );
 }
 
-{/*  <ul className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg">
-                <li>
-                  <NavLink className="block px-4 py-2 text-black hover:bg-gray-100" to="/dashboard">Dashboard</NavLink>
-                </li>
-                <li>
-                  <a onClick={logout} className="block px-4 py-2 text-black hover:bg-gray-100">Logout</a>
-                </li>
-              </ul>*/}

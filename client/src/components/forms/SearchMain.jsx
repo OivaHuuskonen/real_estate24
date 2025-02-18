@@ -63,8 +63,8 @@ export default function SearchMain() {
               const placeId = place.value.place_id;
               const address = place.value.description;
 
-              console.log("Selected place:", place); // Lisätty lokitus
-              console.log("Place ID:", placeId); // Tarkista, että placeId on oikein
+             // console.log("Selected place:", place); // Lisätty lokitus
+             // console.log("Place ID:", placeId); // Tarkista, että placeId on oikein
 
               try {
                   // Käytä backendin APIa Google API -kutsun sijaan
@@ -73,7 +73,7 @@ export default function SearchMain() {
                   params: { place_id: placeId }
                 });
 
-                console.log("Geocode response:", res.data); // Lisätty lokitus
+                //console.log("Geocode response:", res.data); // Lisätty lokitus
 
                 const location = res.data.results[0]?.geometry?.location;
 
@@ -179,6 +179,7 @@ export default function SearchMain() {
                 name="transactionType"
                 onClick={() => setSearch({ ...search, action: 'Buy', price: '' })}
               />
+               <br></br>
               <Form.Check
                 type="radio"
                 label="Rent"
@@ -187,6 +188,7 @@ export default function SearchMain() {
                   setSearch({ ...search, action: 'Rent', price: '' })
                 }
               />
+               <br></br>
             </Form.Group>
             <Form.Group controlId="formBasicPropertyType">
               <Form.Check
@@ -195,15 +197,18 @@ export default function SearchMain() {
                 name="propertyType"
                 onClick={() => setSearch({ ...search, type: 'House', price: '' })}
               />
+               <br></br>
               <Form.Check
                 type="radio"
                 label="Land"
                 name="propertyType"
                 onClick={() => setSearch({ ...search, type: 'Land', price: '' })}
               />
+               <br></br>
             </Form.Group>
             <Form.Group controlId="formBasicRange">
               <Form.Label>Price Range</Form.Label>
+              <br></br>
               <Dropdown>
                 <Dropdown.Toggle variant="primary" id="dropdown-basic">
                   {search.price ? search.price : 'Price'}
@@ -230,6 +235,7 @@ export default function SearchMain() {
             >
               Search
             </Button>
+            <br></br>
           </Form>
         </Modal.Body>
       </Modal>
