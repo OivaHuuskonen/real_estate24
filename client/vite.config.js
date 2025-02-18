@@ -1,23 +1,16 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import dotenv from 'dotenv'
-
-dotenv.config();
-
-/* https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    host: true, // Tämä sallii kaikkien IP-osoitteiden käytön
-    port: 5174, // Oletusportti, voit vaihtaa tarvittaessa
-  },
-}) 
-*/
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
   define: {
     'process.env': process.env,
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
   },
   server: {
     proxy: {
@@ -27,11 +20,6 @@ export default defineConfig({
        // rewrite: (path) => path.replace(/^\/api/, '') // Poistaa ylimääräisen "/api"-prefiksin
       }
     }
-  }/*,
-  build: {
-    rollupOptions: {
-      external: ['src/context/config.js']
-    }
-  }*/
+  }
 });
 
