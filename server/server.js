@@ -14,14 +14,49 @@ dotenv.config();
 const app = express();
 
 // CORS-asetukset 
-  app.use(cors({
+  /*app.use(cors({
     origin: ['http://localhost:5173', 'http://localhost:5174', 'https://real-estate24-huz7.vercel.app'], 
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization', 'refresh_token']
 }));
+app.options("*", cors());*/
 
-app.options("*", cors());
+
+
+// CORS-asetukset
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'https://real-estate24-huz7.vercel.app',
+  'https://real-estate24.vercel.app'
+];
+
+// Dynaaminen CORS-käsittelijä, joka sallii kaikki Vercel-domainit
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Salli pyynnöt ilman originia (esim. Postman tai samasta domainista tulevat)
+    if (!origin) return callback(null, true);
+
+    // Salli kaikki Vercel-alidomainit
+    if (origin.endsWith('.vercel.app')) {
+      return callback(null, true);
+    }
+
+    // Salli vain sallitut originit
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization', 'refresh_token', 'Accept']
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.static('dist'));
 
   const connectDB = async () => {
@@ -47,6 +82,19 @@ app.use("/api", authRoutes);
 app.use("/api", adRoutes);
 app.use("/api", geocodeRoutes);
 
+// Testi reitti
+app.get("/test", (req, res) => {
+  res.send("Test route works!");
+});
+
+// Palvelimen käynnistys
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+
+
 //console.log("MongoDB URI:", process.env.DATABASE);
 //console.log("Google API Key from ENV:", process.env.GOOGLE_GEOCODE_API_KEY);
 
@@ -71,14 +119,3 @@ app.use("/api", geocodeRoutes);
     res.status(500).json({ error: "Google Geocoding request failed" });
   }
 });*/
-
-// Testi reitti
-app.get("/test", (req, res) => {
-  res.send("Test route works!");
-});
-
-// Palvelimen käynnistys
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
